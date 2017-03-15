@@ -17,3 +17,5 @@ We chose to start with a web app.  Using a tool like PhoneGap, we'll have the po
 # needs
 
 We'll take anyone interested in joining, but we could really use additional members with skills in project management, graphic design, front end development, and backend development.
+
+[Phonegap experimentation](https://github.com/oumsofiane1/adoptartpiece)
