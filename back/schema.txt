@@ -1,0 +1,8 @@
+DB
+	Table
+		Pieces
+			-ID
+			-Title
+			-Descr
+			-Lat
+			-Long
