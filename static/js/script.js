@@ -8,7 +8,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoibWF0aWtpbjkiLCJhIjoiYjMyMjBjZTE4NWUxMDkxOWZjZ
 var mymap = L.map('map-display').setView([34.15, -118.24], 9);
 L.mapbox.styleLayer('mapbox://styles/matikin9/cim5bt1q100iy9jkpl7ff9d1h').addTo(mymap);
 
-$.getJSON('../front/toptenv1.json', function(data) {
+$.getJSON('/js/toptenv1.json', function(data) {
     $.each( data, function( key, val ) {
         var $popup = $("<div>", { 
         	"id": key
