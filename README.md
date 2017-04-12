@@ -22,6 +22,6 @@ We will require temporary data storage/database solution.
 
 # needs
 
-We'll take anyone interested in joining, but we could really use additional members with skills in project management, graphic design, front- and back-end development.
+We'll take anyone interested in joining, but we could really use additional members with skills in project management, front- and back-end development.
 
 [Phonegap experimentation](https://github.com/oumsofiane1/adoptartpiece)
