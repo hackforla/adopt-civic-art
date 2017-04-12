@@ -1,0 +1,36 @@
+<html>
+
+
+<head>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+<body>
+
+<h1> Edit {{piece.title }} </h1>
+
+
+<form action="{{ url_for('editPiece', piece_id = piece.id)}}" method = 'post'>
+
+
+	<p>Title:</p>
+		<input type ='text' size='30' name='title' placeholder = '{{piece.title }}'>
+	<p>Description:</p>
+		<input type ='text' size='30' name='description' placeholder = '{{piece.description }}'>
+	<p>Latitude:</p>
+		<input type ='text' size='30' name='latitude' placeholder = '{{piece.latitude }}'>
+	<p>Longitude:</p>
+		<input type ='text' size='30' name='longitude' placeholder = '{{piece.longitude }}'>
+	<p>Image URL:</p>
+		<input type ='text' size='30' name='img_url' placeholder = '{{piece.img_url }}'>
+
+	<br/><br/>
+<input type='submit' value='Edit'>
+
+
+<a href="{{url_for('showFeed')}}"> Cancel </a>
+
+</form>
+</body>
+
+</html>

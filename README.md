@@ -1,21 +1,72 @@
-# adopt-civic-art
+# ADOPT CIVIC ART PROJECT 
 
-This project grew out of the idea of Boston's Adopt-a-Hydrant application, except here we're adapting it to let the public adopt responsibility for checking in on a piece of civic art.  Specifically, civic art that is owned and maintained by the LA County Arts Commission but is too spread out across the County's >4,000 square miles for the commission to efficiently manage.
+Having attended HackForLA for one night and am proposing web application architecture which hopefully gets adopted (haha) for the Adopt Civic Art group.
+I'm starting with a Python-Flask framework serving raw HTML using SQLite DB and SqlAlchemy mapper. Currently writing database setups .py with only Piece table, mocking out Feed as landing page and Pieces as view on click, writing API and Flask routing methods.
 
-The basic function of this app is to allow the public to submit photos and a basic damage report for a County-owned piece of civic art.
+TODO then afters:
+-Styling with Bootstrap framework probably
+-Adding oauth for authenification and authorization
+-Incorporate logic for admin vs user for CRUD in add/delete pieces
+-Add ReactJS frontend framework 
 
-# history
+TODISCUSS need to knows:
+- how to store users
+- maybeeee tests?
 
-This project idea was proposed through a monthly gathering of local civic tech/data/government people, [Data + Donuts](http://datadonuts.la).  The idea was then pitched at Hack For LA's 2/7/17 hack night and quickly attracted a group of interested individuals.
+ROUTES:
+```
+/
+/feed
+	Landing page of feed with scrolldown of pieces
 
-Since then, members have created a user survey and conducted user interviews.  We'll define a set of required features from the results and then we'll create a couple different app mockups for comparison.
+/feed/<int:piece_id>
+	Show that piece
 
-# specs
+/feed/new
+	Add piece to feed
 
-We chose to start with a web app.  Using a tool like PhoneGap, we'll have the possibility of compiling to mobile later on.  We will need some sort of data storage/database solution.
+/feed/<int:piece_id>/edit
+	Edit that piece 
 
-# needs
+/feed/<int:piece_id>/delete
+	Delete that piece
 
-We'll take anyone interested in joining, but we could really use additional members with skills in project management, graphic design, front end development, and backend development.
+/feed/JSON
+	serialize all feed into returned JSON
 
-[Phonegap experimentation](https://github.com/oumsofiane1/adoptartpiece)
+/feed/<int:piece_id>/JSON
+	serialize piece data into returned JSON
+```
+
+DATABASE SCHEMA: 
+sqlite:///civicart.db
+```
+Table
+	Piece
+		+ ID <int> primary
+		+ title <string(50)> 
+		+ description <string(250)>
+		+ latitude <int>
+		+ longitude <int>
+		+ img_url <string(250)>
+
+
+
+
+
+## Getting Started
+Setup dummy database: "civicart.db"
+```
+python piece_sample.py
+```
+
+run app
+
+```
+python serve.py
+```
+
+Open up http://localhost:3000
+
+### Prerequisites
+Python | Flask | SQLite3 | SQLAlchemy 

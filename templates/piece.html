@@ -1,0 +1,33 @@
+<html>
+	
+<head>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+</head>
+	<body>
+		<div class = 'pane'>
+			<h1>{{ piece.title }}</h1>
+
+			<p>Description: {{ piece.description }}</p>
+
+			<p>Latitude: {{ piece.latitude }}</p>
+
+			<p>Longitude: {{ piece.longitude }}</p>
+
+			<p>Image URL: {{ piece.img_url }}</p>
+
+			
+			{% with messages = get_flashed_messages() %}
+	      	{% if messages %}
+	          
+	        <ul>
+		        {% for message in messages %}
+		            <li> <strong> {{ message }} </strong> </li>
+		        {% endfor %}
+	        </ul>
+	        {% endif %}
+	        {% endwith %}
+
+		</div>
+	</body>
+
+</html>
