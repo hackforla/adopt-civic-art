@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 
 from database_setup import Piece, Base
 
-engine = create_engine('sqlite:///civicart.db')
+engine = create_engine('mysql://root:root@127.0.0.1:8889/civicart')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)

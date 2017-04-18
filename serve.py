@@ -14,7 +14,7 @@ CLIENT_ID = json.loads(
 APPLICATION_NAME = "Adopt Civic Art"
 
 # connect to sqlite database session
-engine = create_engine('sqlite:///civicart.db')
+engine = create_engine('mysql://root:root@127.0.0.1:8889/civicart')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)

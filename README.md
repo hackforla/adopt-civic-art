@@ -58,8 +58,15 @@ We'll take anyone interested in joining, but we could really use additional memb
 	serialize piece data into returned JSON
 ```
 
-DATABASE SCHEMA: 
-sqlite:///civicart.db
+DATABASE SCHEMA:
+mysql://root:root@127.0.0.1:8889/civicart
+
+Note:Using MAMP to manage MySQL server. You may have to link with:
+```
+ln -s /Applications/MAMP/tmp/mysql/mysql.sock /tmp/mysql.sock
+```
+
+
 ```
 Table
 	Piece
