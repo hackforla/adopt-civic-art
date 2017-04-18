@@ -111,7 +111,7 @@ def fbconnect():
         response.headers['Content-Type'] = 'application/json'
         return response
     access_token = request.data
-    print "access token received %s " % access_token
+    print("access token received %s " % access_token)
 
     app_id = json.loads(open('fb_client_secrets.json', 'r').read())[
         'web']['app_id']
@@ -224,7 +224,7 @@ def gconnect():
     if result['issued_to'] != CLIENT_ID:
         response = make_response(
             json.dumps("Token's client ID does not match app's."), 401)
-        print "Token's client ID does not match app's."
+        print("Token's client ID does not match app's.")
         response.headers['Content-Type'] = 'application/json'
         return response
 
@@ -267,7 +267,7 @@ def gconnect():
     output += login_session['picture']
     output += ' " style = "width: 300px; height: 300px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"> '
     flash("you are now logged in as %s" % login_session['username'])
-    print "done!"
+    print("done!")
     return output
 
 @app.route('/gdisconnect')
@@ -290,6 +290,20 @@ def gdisconnect():
         response.headers['Content-Type'] = 'application/json'
         return response
 
+@app.route('/static/<path:path>')
+def send_static_file(folder, path):
+    if (folder == "css" or folder == "js"):
+        return send_from_directory('./static/'+folder, path)
+
+@app.route('/upload',methods=['POST'])
+def upload_image():
+    file = request.files['file']
+    file.filename = "hello.jpg"
+    file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+    return render_template('map.html')
+
 if __name__ == '__main__':
     app.debug = True
+    app.config['UPLOAD_FOLDER'] = './data/'
+    app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
     app.run(host='0.0.0.0', port=3000)
