@@ -4,12 +4,13 @@ Having attended HackForLA for one night and am proposing web application archite
 I'm starting with a Python-Flask framework serving raw HTML using SQLite DB and SqlAlchemy mapper. Currently writing database setups .py with only Piece table, mocking out Feed as landing page and Pieces as view on click, writing API and Flask routing methods.
 
 TODO then afters:
+
 -Styling with Bootstrap framework probably
 -Adding oauth for authenification and authorization
 -Incorporate logic for admin vs user for CRUD in add/delete pieces
 -Add ReactJS frontend framework 
-=======
-# adopt-a-civic-artwork
+
+# adopt-civic-art
 
 This project was inspired by City of Boston's Adopt-a-Hydrant program (an Esri application with support from Code for America) where members of the community could "adopt" a hydrant and commit to shoveling snow to provide access to the hydrant for the Fire Department after every snowfall. The adopter would then be asked to submit a picture of the newly shoveled access path to the hydrant. 
 
@@ -18,6 +19,7 @@ For civic artwork, the adoption model is different. We ABSOLUTELY do not want me
 The basic function of this web application is to provide a platform for community members to submit photos of County-owned civic artworks as a means of visual documentation and trigger maintenance efforts as needed.  
 
 TODISCUSS need to knows:
+
 - how to store users
 - maybeeee tests?
 
