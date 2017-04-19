@@ -15,10 +15,10 @@ I'm starting with a Python-Flask framework serving raw HTML using SQLite DB and 
 
 TODO then afters:
 
--Styling with Bootstrap framework probably
--Adding oauth for authenification and authorization
--Incorporate logic for admin vs user for CRUD in add/delete pieces
--Add ReactJS frontend framework 
+- Styling with Bootstrap framework probably
+- Adding oauth for authenification and authorization
+- Incorporate logic for admin vs user for CRUD in add/delete pieces
+- Add ReactJS frontend framework 
 
 TODISCUSS need to knows:
 
