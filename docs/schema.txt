@@ -1,0 +1,8 @@
+Table
+	Piece
+		+ ID <int> primary
+		+ title <string(50)> 
+		+ description <string(250)>
+		+ latitude <int>
+		+ longitude <int>
+		+ img_url <string(250)>
