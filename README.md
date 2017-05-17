@@ -16,20 +16,21 @@ The basic function of this web application is to provide a platform for communit
 
 ### Installation and Setup
 
-1. `git clone https://github.com/hackforla/adopt-civic-art.git`
-2. `pip install -r requirements.txt`
+1. `$ git clone https://github.com/hackforla/adopt-civic-art.git`
+2. `$ cd adopt-civic-art`
+3. `$ sudo pip install -r requirements.txt`
 
 
 ## Getting Started
 Setup dummy database: "civicart.db"
-```
-python piece_sample.py
-```
+`$ cd models`
+`$ python piece_samples.py`
+
 
 run app
 
 ```
-python serve.py
+$python serve.py
 ```
 
 Open up http://localhost:3000
