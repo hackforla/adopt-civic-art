@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Artworks{% endblock title %}
+
+{% block content %}
+
+<h1>Adopt public art today.</h1>
+
+  {% for artwork in artworks %}
+    <article class="artwork">
+      <h2><a href="/artwork/{{ artwork.id }}">{{ artwork.title }}</a></h2>
+      <p>{{ artwork.description }}</p>
+    </article>
+  {% endfor %}
+
+{% endblock content %}

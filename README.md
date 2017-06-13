@@ -10,12 +10,9 @@ The basic function of this web application is to provide a platform for communit
 
 ## Setup
 
-This project is a [Flask](http://flask.pocoo.org/) app written in **Python 3**.
+This project is a [Django](https://www.djangoproject.com) application written in **Python 3.6**.
 
 It is highly recommended to start up a Pythonic [Virtual Environment](http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/) to develop and/or run the application.
 
 ### Install dependencies
 `pip install -r requirements.txt`
-
-### Run the app
-`python app.py`
