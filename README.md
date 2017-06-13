@@ -16,3 +16,12 @@ It is highly recommended to start up a Pythonic [Virtual Environment](http://pyt
 
 ### Install dependencies
 `pip install -r requirements.txt`
+
+### Make migrations
+`python manage.py makemigrations`
+
+### Run migrations
+`python manage.py migrate`
+
+### Run the server locally
+`python manage.py runserver`
