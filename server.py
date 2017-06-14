@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, redirect, jsonify, url_for, m
 from flask import session as login_session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from database_setup import Base, Piece
+from models.database_setup import Base, Piece
 from oauth2client.client import flow_from_clientsecrets, FlowExchangeError
 
 
