@@ -2,10 +2,14 @@
 <html>
 <head>
   <title>Adopt a Civic Artwork - {% block title %}{% endblock title %}</title>
+
+  <link rel="stylesheet" href="/static/css/styles.css" />
 </head>
 <body>
 
   <div class="main">
+    {% include "nav.html" %}
+
     {% block content %}{% endblock content %}
   </div>
 
