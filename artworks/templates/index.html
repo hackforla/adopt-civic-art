@@ -15,12 +15,21 @@
       });
 
       {% for artwork in artworks %}
+      var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
+        content: '<strong>{{ artwork.title }}</strong><br>{{ artwork.description }}'
+      });
+
       var marker{{ forloop.counter }} = new google.maps.Marker({
         position: {
           lat: {{ artwork.lat }},
           lng: {{ artwork.lon }}
         },
-        map: map
+        map: map,
+        title: '{{ artwork.title }}'
+      });
+
+      marker{{ forloop.counter }}.addListener('click', function () {
+        infowindow{{ forloop.counter }}.open(map, marker{{ forloop.counter }});
       });
       {% endfor %}
     }
