@@ -13,6 +13,3 @@ node_modules
 
 # db
 db.sqlite3
-
-# settings file
-settings.py
