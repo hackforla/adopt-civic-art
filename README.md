@@ -18,7 +18,7 @@ For this prototyping round the database will be a local SQLite file until we cha
 * virtualenv ([virtual environment](https://docs.python.org/3/tutorial/venv.html))
 * pip
 
-There are many different ways to set up a virtual environment, so feel free to use a method that works for you,. However make sure that you are running *Python 3.4+* within the activated environment if you have multiple versions of Python on your machine.
+There are many different ways to set up a virtual environment, so feel free to use a method that works for you. However please make sure that you are running *Python 3.4+* within the activated environment if you have multiple versions of Python on your machine.
 
 ### Install dependencies
 `pip install -r requirements.txt`
