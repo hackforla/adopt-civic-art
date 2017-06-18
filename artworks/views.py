@@ -4,7 +4,7 @@ from artworks.models import Artwork
 
 
 def index(request):
-    artworks = Artwork.objects.order_by('-title')[:5]
+    artworks = Artwork.objects.order_by('-title').filter(active=True)[:5]
     context = {'artworks': artworks}
 
     return render(request, 'index.html', context)
