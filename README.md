@@ -26,5 +26,9 @@ There are many different ways to set up a virtual environment, so feel free to u
 ### Run migrations
 `python manage.py migrate`
 
+### Create an initial admin account
+`python manage.py createsuperuser`
+
 ### Run the server locally
 `python manage.py runserver`
+
