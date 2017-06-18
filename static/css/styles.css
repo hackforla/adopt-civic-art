@@ -6,6 +6,14 @@ body {
   padding: 0;
 }
 
+h1,
+h2,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
 nav {
   box-shadow: 0px -3px 10px 0px rgba(0,0,0,0.75);
   background-color: #ffffff;
@@ -28,7 +36,47 @@ nav ul li {
   display: inline-block;
 }
 
-#map {
+#home .artworks {
+  position: absolute;
+  z-index: 1;
+  top: 125px;
+  left: 10px;
+}
+
+#home .artworks li {
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.25);
+  background: #ffffff;
+  width: 250px;
+  list-style: none;
+  margin: 0 0 15px 0;
+  padding: 20px;
+  margin-left: -500px;
+  animation: slideIn 2s forwards;
+}
+
+#home .artworks li:nth-child(1) {
+  animation-delay: 0s;
+}
+#home .artworks li:nth-child(2) {
+  animation-delay: .25s;
+}
+#home .artworks li:nth-child(3) {
+  animation-delay: .5s;
+}
+#home .artworks li:nth-child(4) {
+  animation-delay: .75s;
+}
+
+@keyframes slideIn {
+  from {
+    margin-left: -500px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+#home #map {
   position: absolute;
   top: 50px;
   right: 0;
