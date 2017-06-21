@@ -31,4 +31,3 @@ There are many different ways to set up a virtual environment, so feel free to u
 
 ### Run the server locally
 `python manage.py runserver`
-
