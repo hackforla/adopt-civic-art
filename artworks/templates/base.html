@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adopt a Civic Artwork - {% block title %}{% endblock title %}</title>
+
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+
+  <div class="main">
+    {% include "nav.html" %}
+
+    {% block content %}{% endblock content %}
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  {% block scripts %}{% endblock scripts %}
+
+</body>
+</html>

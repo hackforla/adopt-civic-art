@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Adopt public art today{% endblock title %}
+
+{% block content %}
+  <div id="home">
+
+    <ul class="artworks">
+    {% for artwork in artworks %}
+      <li data-artwork-id="{{ artwork.id }}">
+        <h2>{{ artwork.title }}</h2>
+        <div class="author">{{ artwork.artist_name }}</div>
+      </li>
+    {% endfor %}
+    </ul>
+
+    <div id="map"></div>
+
+  </ul>
+{% endblock content %}
+
+{% block scripts %}
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: new google.maps.LatLng(34.0639, -118.3592),
+        zoom: 11,
+        scrollwheel: false
+      });
+
+      var marker;
+
+      {% for artwork in artworks %}
+      var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
+        content: '<strong>{{ artwork.title }}</strong><br>{{ artwork.description }}'
+      });
+
+      var marker{{ forloop.counter }} = new google.maps.Marker({
+        position: {
+          lat: {{ artwork.lat }},
+          lng: {{ artwork.lon }}
+        },
+        map: map,
+        title: '{{ artwork.title }}'
+      });
+
+      marker{{ forloop.counter }}.addListener('click', function () {
+        infowindow{{ forloop.counter }}.open(map, marker{{ forloop.counter }});
+      });
+
+      google.maps.event.addListener(map, 'click', function() {
+        infowindow{{ forloop.counter }}.close();
+      });
+      {% endfor %}
+
+      $('.artworks li').click(function () {
+        // google.maps.event.trigger(marker, 'click');
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+  </script>
+{% endblock scripts %}

@@ -1,0 +1,15 @@
+# virtualenv
+bin
+lib
+include
+
+# Python
+*.pyc
+pip-selfcheck.json
+.Python
+
+# npm
+node_modules
+
+# db
+db.sqlite3
