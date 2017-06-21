@@ -26,7 +26,7 @@ class Artwork(models.Model):
     street_2 = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=200, blank=False)
     zipcode = models.IntegerField(blank=False)
-    date_entered = models.DateField(auto_now_add=True)
+    date_entered = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True, blank=False)
 
 class Adoption(models.Model):
