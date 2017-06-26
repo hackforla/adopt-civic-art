@@ -26,8 +26,11 @@ class Artwork(models.Model):
     street_2 = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=200, blank=False)
     zipcode = models.IntegerField(blank=False)
-    date_entered = models.DateTimeField(auto_now_add=True)
+    date_entered = models.DateField(auto_now_add=True, null=False)
     active = models.BooleanField(default=True, blank=False)
+
+    def __str__(self):
+        return self.title
 
 class Adoption(models.Model):
     user = models.ForeignKey(User)

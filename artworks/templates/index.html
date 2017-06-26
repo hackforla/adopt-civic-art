@@ -8,8 +8,13 @@
     <ul class="artworks">
     {% for artwork in artworks %}
       <li data-artwork-id="{{ artwork.id }}">
-        <h2>{{ artwork.title }}</h2>
-        <div class="author">{{ artwork.artist_name }}</div>
+        <a href="/artwork/{{ artwork.id }}">
+        <div class="img-placeholder"></div>
+        <div class="info">
+          <h2>{{ artwork.title }}</h2>
+          <div class="author">{{ artwork.artist_name }}</div>
+        </div>
+        </a>
       </li>
     {% endfor %}
     </ul>

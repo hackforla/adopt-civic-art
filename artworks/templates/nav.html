@@ -1,9 +1,11 @@
 <nav role="navigation">
+  <h1><a href="/">Adopt a Civic Artwork</a></h1>
   <ul>
-    <li>Why Adopt?</li>
-    <li>Check-in</li>
-    <li>Help</li>
-    <li>Log in</li>
-    <li>Sign up</li>
+    {% if not request.user.is_authenticated %}
+    <li><a href="/accounts/login">Log in</a></li>
+    <li class="sign-up"><a href="/accounts/register">Sign up</a></li>
+    {% else %}
+    <li class="logged-in">Logged in as {{ user}} (<a href="/accounts/logout">log out</a>)</li>
+    {% endif %}
   </ul>
 </nav>

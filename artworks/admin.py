@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Artwork, ArtworkImage
+from .models import Artwork, ArtworkImage, Adoption
 
 
 class ArtworkImageInline(admin.StackedInline):
@@ -7,7 +7,13 @@ class ArtworkImageInline(admin.StackedInline):
   fields = ['image', 'author', 'url', 'license', 'caption']
 
 class ArtworkAdmin(admin.ModelAdmin):
-    list_display = ('title', 'artist_name')
-    inlines = [ArtworkImageInline,]
+  list_display = ('title', 'artist_name')
+  inlines = [ArtworkImageInline,]
 
 admin.site.register(Artwork, ArtworkAdmin)
+
+
+class AdoptionAdmin(admin.ModelAdmin):
+  list_display = ('artwork', 'user')
+
+admin.site.register(Adoption, AdoptionAdmin)

@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
-from artworks.models import Artwork
+from django.core.exceptions import ObjectDoesNotExist
+
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
+from artworks.models import Artwork, Adoption
 
 
 def index(request):
@@ -10,11 +15,32 @@ def index(request):
     return render(request, 'index.html', context)
 
 def artwork(request, id):
-    artwork = Artwork.objects.get(id=id)
+    artwork = get_object_or_404(Artwork, pk=id)
 
-    context = {'artwork': artwork}
+    adoptees = Adoption.objects.filter(artwork=artwork)
 
-    return render(request, 'artwork.html', context)
+    if request.user.is_authenticated:
+        adopted = Adoption.objects.filter(user=request.user, artwork=artwork)
+    else:
+        adopted = False
+
+    return render(request, 'artwork.html',
+        {'artwork' : artwork, 'adoptees': adoptees, 'adopted': adopted})
+
+@login_required
+def adopt(request, id):
+    artwork = get_object_or_404(Artwork, pk=id)
+    adoptees = Adoption.objects.filter(artwork=artwork)
+
+    check_adopted = Adoption.objects.filter(user=request.user, artwork=artwork)
+
+    if not check_adopted:
+        adopt = Adoption(user=request.user, artwork=artwork)
+        adopt.save()
+
+    adopted = True
+
+    return render(request, 'artwork.html', {'artwork' : artwork, 'adoptees': adoptees, 'adopted': adopted})
 
 def handler404(request):
     response = render_to_response('404.html', {},
