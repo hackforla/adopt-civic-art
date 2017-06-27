@@ -16,3 +16,6 @@ db.sqlite3
 
 # uploaded images
 media
+
+# local settings
+local_settings.py
