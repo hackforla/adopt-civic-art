@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.shortcuts import get_object_or_404, render
 
 from django.core.exceptions import ObjectDoesNotExist
@@ -10,9 +11,8 @@ from artworks.models import Artwork, Adoption
 
 def index(request):
     artworks = Artwork.objects.order_by('-id').filter(active=True)[:5]
-    context = {'artworks': artworks}
 
-    return render(request, 'index.html', context)
+    return render(request, 'index.html', {'artworks': artworks, 'GOOGLE_MAPS_API_KEY': settings.GOOGLE_MAPS_API_KEY})
 
 def artwork(request, id):
     artwork = get_object_or_404(Artwork, pk=id)
