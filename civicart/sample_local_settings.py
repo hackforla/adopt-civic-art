@@ -9,4 +9,6 @@ DATABASES = {
     }
 }
 
+GOOGLE_MAPS_API_KEY = ''
+
 DEBUG = True
