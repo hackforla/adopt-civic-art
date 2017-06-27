@@ -254,10 +254,13 @@ input[type='submit']:hover {
   height: 400px;
   margin-top: 65px;
   background-color: #ddd;
+  position: relative;
   overflow: hidden;
 }
 .artwork .artwork-image img {
   width: 100%;
+  bottom: 0;
+  position: absolute;
 }
 
 .artwork-content {
