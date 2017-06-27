@@ -28,6 +28,13 @@ def artwork(request, id):
         {'artwork' : artwork, 'adoptees': adoptees, 'adopted': adopted})
 
 @login_required
+def profile(request):
+    adoptions = Adoption.objects.filter(user=request.user)
+
+    return render(request, 'registration/profile.html',
+        {'adoptions': adoptions})
+
+@login_required
 def adopt(request, id):
     artwork = get_object_or_404(Artwork, pk=id)
     adoptees = Adoption.objects.filter(artwork=artwork)
@@ -41,6 +48,16 @@ def adopt(request, id):
     adopted = True
 
     return render(request, 'artwork.html', {'artwork' : artwork, 'adoptees': adoptees, 'adopted': adopted})
+
+@login_required
+def unadopt(request, id):
+    artwork = Artwork.objects.filter(id=id)
+
+    Adoption.objects.filter(user=request.user, artwork=artwork).delete()
+
+    adoptions = Adoption.objects.filter(user=request.user)
+
+    return render(request, 'registration/profile.html', {'adoptions': adoptions})
 
 def handler404(request):
     response = render_to_response('404.html', {},

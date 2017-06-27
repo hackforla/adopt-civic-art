@@ -5,7 +5,7 @@ from django.contrib import admin
 
 class ArtworkImage(models.Model):
     artwork = models.ForeignKey('Artwork')
-    image = models.ImageField(upload_to='artwork_images/', blank=True)
+    image = models.ImageField(upload_to='artworks/', blank=True)
     author = models.CharField(max_length=200, blank=False)
     url = models.CharField(max_length=200, blank=False)
     license = models.CharField(max_length=200, blank=True)
@@ -39,7 +39,7 @@ class Adoption(models.Model):
 
 class CheckinImage(models.Model):
     checkin = models.ForeignKey('Checkin')
-    image = models.ImageField(upload_to='checkin_images/', blank=False)
+    image = models.ImageField(upload_to='checkins/', blank=False)
 
 class Checkin(models.Model):
     user = models.ForeignKey(User)

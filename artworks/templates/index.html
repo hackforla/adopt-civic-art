@@ -9,7 +9,9 @@
     {% for artwork in artworks %}
       <li data-artwork-id="{{ artwork.id }}">
         <a href="/artwork/{{ artwork.id }}">
-        <div class="img-placeholder"></div>
+        <div class="image">
+          <img src="{{ MEDIA_URL }}{{ artwork.artworkimage_set.all.0.image }}" alt="{{ artwork.description }}">
+        </div>
         <div class="info">
           <h2>{{ artwork.title }}</h2>
           <div class="author">{{ artwork.artist_name }}</div>
@@ -47,14 +49,6 @@
         },
         map: map,
         title: '{{ artwork.title }}'
-      });
-
-      marker{{ forloop.counter }}.addListener('click', function () {
-        infowindow{{ forloop.counter }}.open(map, marker{{ forloop.counter }});
-      });
-
-      google.maps.event.addListener(map, 'click', function() {
-        infowindow{{ forloop.counter }}.close();
       });
       {% endfor %}
 

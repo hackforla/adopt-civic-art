@@ -7,7 +7,7 @@
       {% for field in form %}
         <li>
         {% if field.errors %}
-          <span class="error">{{ field.errors }}</span>e
+          <span class="error">{{ field.errors }}</span>
         {% endif %}
         {{ field.label_tag }}
         {{ field }}

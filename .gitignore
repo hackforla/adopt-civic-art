@@ -13,3 +13,6 @@ node_modules
 
 # db
 db.sqlite3
+
+# uploaded images
+media
