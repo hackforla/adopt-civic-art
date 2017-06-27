@@ -1,1 +1,1 @@
-web: gunicorn adopt-civic-art.wsgi
+web: gunicorn civicart.wsgi
