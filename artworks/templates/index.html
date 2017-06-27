@@ -38,10 +38,6 @@
       var marker;
 
       {% for artwork in artworks %}
-      var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
-        content: '<strong>{{ artwork.title }}</strong><br>{{ artwork.description }}'
-      });
-
       var marker{{ forloop.counter }} = new google.maps.Marker({
         position: {
           lat: {{ artwork.lat }},
