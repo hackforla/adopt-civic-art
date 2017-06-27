@@ -119,7 +119,9 @@ MEDIA_URL = '/media/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-DATABASES['default'] = dj_database_url.config()
+DATABASES = {}
+DATABASES['default'] =  dj_database_url.config(default='postgres://user:pass@host/db')
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql_psycopg2'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
