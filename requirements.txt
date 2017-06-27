@@ -2,3 +2,4 @@ Django==1.11.2
 Pillow==4.1.1
 django-registration==2.2
 whitenoise==3.3.0
+gunicorn==19.7.1
