@@ -13,7 +13,7 @@ The basic function of this web application is to provide a platform for communit
 ## Technical Overview
 
 This project is a [Django](https://www.djangoproject.com) application written in **Python 3**.<br>
-For this prototyping round the database will be a local SQLite file until we change the engine to PostgreSQL to be production ready.
+Local development uses a SQLite database, and production will use a PostgreSQL database.
 
 ### Basic Prerequisites
 * Python 3.4.x
@@ -39,5 +39,10 @@ Find the `/civicart/sample_local_settings.py` file and rename to `local_settings
 
 ---
 
-### Deployment Notes
-* Set environment variables for `SECRET_KEY` (random 30 character string), and `GOOGLE_MAPS_API_KEY`
+### Deployment on Heroku (dev server)
+Set environment variables for `SECRET_KEY` (random 30 character string), and `GOOGLE_MAPS_API_KEY`
+
+1. `heroku login`
+2. Commit all production ready changes onto local git repo
+3. `git push heroku master`
+
