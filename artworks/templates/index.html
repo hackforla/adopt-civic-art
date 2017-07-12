@@ -8,8 +8,17 @@
     <ul class="artworks">
     {% for artwork in artworks %}
       <li data-artwork-id="{{ artwork.id }}">
-        <h2>{{ artwork.title }}</h2>
-        <div class="author">{{ artwork.artist_name }}</div>
+        <a href="/artwork/{{ artwork.id }}">
+        <div class="image">
+          {% if artwork.artworkimage_set.all.0.image %}
+          <img src="{{ MEDIA_URL }}{{ artwork.artworkimage_set.all.0.image }}" alt="{{ artwork.description }}">
+          {% endif %}
+        </div>
+        <div class="info">
+          <h2>{{ artwork.title }}</h2>
+          <div class="author">{{ artwork.artist_name }}</div>
+        </div>
+        </a>
       </li>
     {% endfor %}
     </ul>
@@ -31,10 +40,6 @@
       var marker;
 
       {% for artwork in artworks %}
-      var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
-        content: '<strong>{{ artwork.title }}</strong><br>{{ artwork.description }}'
-      });
-
       var marker{{ forloop.counter }} = new google.maps.Marker({
         position: {
           lat: {{ artwork.lat }},
@@ -42,14 +47,6 @@
         },
         map: map,
         title: '{{ artwork.title }}'
-      });
-
-      marker{{ forloop.counter }}.addListener('click', function () {
-        infowindow{{ forloop.counter }}.open(map, marker{{ forloop.counter }});
-      });
-
-      google.maps.event.addListener(map, 'click', function() {
-        infowindow{{ forloop.counter }}.close();
       });
       {% endfor %}
 
@@ -59,6 +56,6 @@
     }
   </script>
   <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callback=initMap">
   </script>
 {% endblock scripts %}

@@ -1,0 +1,18 @@
+    {% if form.non_field_errors %}
+      <span class="error">{{ form.non_field_errors }}</span>
+    {% endif %}
+    <form action="" method="post">
+      {% csrf_token %}
+      <ul>
+      {% for field in form %}
+        <li>
+        {% if field.errors %}
+          <span class="error">{{ field.errors }}</span>
+        {% endif %}
+        {{ field.label_tag }}
+        {{ field }}
+        </li>
+      {% endfor %}
+      </ul>
+      <input type="submit" value="Submit" />
+    </form>

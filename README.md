@@ -8,6 +8,8 @@ For civic artwork, the adoption model is different. We ABSOLUTELY do not want me
 
 The basic function of this web application is to provide a platform for community members to submit photos of County-owned civic artworks as a means of visual documentation and trigger maintenance efforts as needed.
 
+---
+
 ## Technical Overview
 
 This project is a [Django](https://www.djangoproject.com) application written in **Python 3**.<br>
@@ -19,6 +21,9 @@ For this prototyping round the database will be a local SQLite file until we cha
 * pip
 
 There are many different ways to set up a virtual environment, so feel free to use a method that works for you. However please make sure that you are running *Python 3.4+* within the activated environment if you have multiple versions of Python on your machine.
+
+### Local settings
+Find the `/civicart/sample_local_settings.py` file and rename to `local_settings.py`. This configures a SQLite server and a debug environment for local development.
 
 ### Install dependencies
 `sudo pip3 install -r requirements.txt`
@@ -32,16 +37,7 @@ There are many different ways to set up a virtual environment, so feel free to u
 ### Run the server locally
 `python manage.py runserver`
 
-## Setting up on Cloud9
+---
 
-Using Cloud9 as a standard development environment means you can avoid the issues you run into when every developer uses a different operating system, has different versions of various software, and as a result runs into different local issues.
-
-### Set up Cloud9
-
-Connect your GitHub account.  Fork the repo and copy the clone link.  Create a new workspace in Cloud9 and paste your clone link.
-
-### Create a workspace
-
-Fork the repo and then copy the SSH 
-
-
+### Deployment Notes
+* Set environment variables for `SECRET_KEY` (random 30 character string), and `GOOGLE_MAPS_API_KEY`

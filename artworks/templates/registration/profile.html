@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Your profile{% endblock title %}
+
+{% block content %}
+  <div class="content">
+    <h2>Welcome, {{ user }}</h2>
+
+    <div class="adopted-artworks">
+    {% if adoptions %}
+      <h3>Your adopted artworks</h3>
+      <ul>
+      {% for artwork in adoptions %}
+        <li>
+          <a href="/artwork/{{ artwork.artwork.id }}">
+            <div class="image">
+              <img src="{{ MEDIA_URL}}{{ artwork.artwork.artworkimage_set.all.0.image }}" >
+            </div>
+            <div class="info">
+              <h3>{{ artwork.artwork.title }}</h3>
+              <p>{{ artwork.artwork.artist_name }}</p>
+              (<a href="/artwork/{{ artwork.artwork.id }}/unadopt">Unadopt</a>)
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+      {% else %}
+      <h3>You have no adopted artworks.</h3>
+    {% endif %}
+    </div>
+  </div>
+{% endblock content %}
