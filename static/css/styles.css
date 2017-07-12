@@ -1,3 +1,9 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   color: #111;
@@ -94,8 +100,14 @@ nav ul li.logged-in {
 #home .artworks {
   position: absolute;
   z-index: 1;
-  top: 125px;
+  top: 80px;
   left: 10px;
+  bottom: 10px;
+  overflow-y: scroll;
+}
+
+#home .artworks::-webkit-scrollbar {
+  display: none;
 }
 
 #home .artworks li {
@@ -153,10 +165,12 @@ nav ul li.logged-in {
 
 #home #map {
   position: absolute;
-  top: 55px;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  /*top: 55px;*/
+  /*right: 0;*/
+  /*left: 0;*/
+  /*bottom: 0;*/
+  width: 100%;
+  height: 100%;
   z-index: 0;
 }
 
