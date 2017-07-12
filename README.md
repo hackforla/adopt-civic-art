@@ -21,7 +21,7 @@ For this prototyping round the database will be a local SQLite file until we cha
 There are many different ways to set up a virtual environment, so feel free to use a method that works for you. However please make sure that you are running *Python 3.4+* within the activated environment if you have multiple versions of Python on your machine.
 
 ### Install dependencies
-`pip install -r requirements.txt`
+`sudo pip3 install -r requirements.txt`
 
 ### Run migrations
 `python manage.py migrate`
@@ -31,3 +31,17 @@ There are many different ways to set up a virtual environment, so feel free to u
 
 ### Run the server locally
 `python manage.py runserver`
+
+## Setting up on Cloud9
+
+Using Cloud9 as a standard development environment means you can avoid the issues you run into when every developer uses a different operating system, has different versions of various software, and as a result runs into different local issues.
+
+### Set up Cloud9
+
+Connect your GitHub account.  Fork the repo and copy the clone link.  Create a new workspace in Cloud9 and paste your clone link.
+
+### Create a workspace
+
+Fork the repo and then copy the SSH 
+
+

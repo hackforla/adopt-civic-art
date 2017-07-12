@@ -27,8 +27,10 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_string(50))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# If using Cloud9, add your Cloud9 preview domain to the list of allowed hosts.
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '127.0.0.1',
+    'adopt-a-civicart-matikin9.c9users.io'
 ]
 
 
