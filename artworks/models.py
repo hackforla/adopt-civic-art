@@ -6,7 +6,6 @@ from django.contrib import admin
 class ArtworkImage(models.Model):
     artwork = models.ForeignKey('Artwork')
     image = models.ImageField(upload_to='artworks/', blank=True)
-    author = models.CharField(max_length=200, blank=False)
     url = models.CharField(max_length=200, blank=False)
     license = models.CharField(max_length=200, blank=True)
     caption = models.CharField(max_length=200, blank=True)
