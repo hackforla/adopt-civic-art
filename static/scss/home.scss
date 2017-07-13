@@ -1,0 +1,66 @@
+/**/
+/* Homepage */
+/**/
+
+#home {
+  .artworks {
+    position: absolute;
+    z-index: 1;
+    top: 80px;
+    left: 10px;
+    bottom: 10px;
+    overflow-y: scroll;
+
+    li {
+      box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.25);
+      border-radius: 3px;
+      background: #fff;
+      width: 260px;
+      margin: 0 0 15px 0;
+      margin-left: -500px;
+      animation: slideIn 2s forwards;
+
+      a {
+        text-decoration: none;
+      }
+
+      .image {
+        width: 100%;
+        height: 125px;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        background-color: #ddd;
+        display: block;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .info {
+        padding: 10px;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  #map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    margin-left: -500px;
+  }
+  to {
+    margin-left: 0;
+  }
+}

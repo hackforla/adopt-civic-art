@@ -1,0 +1,48 @@
+nav {
+  box-shadow: 0px -3px 10px 0px rgba(0,0,0,0.75);
+  background-color: #fff;
+  height: 65px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+nav h1 {
+  padding: 15px 0 0 15px;
+  display: inline-block;
+}
+
+nav ul {
+  margin: 0 10px;
+  padding: 0;
+  text-align: right;
+  float: right;
+}
+
+nav ul li {
+  margin: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+nav ul li.sign-up a {
+  width: inherit;
+  height: inherit;
+  color: red;
+  font-weight: bold;
+  border: 1px solid red;
+  border-radius: 3px;
+  padding: 10px 20px;
+  display: block;
+}
+nav ul li.sign-up a:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: red;
+}
+
+nav ul li.logged-in {
+  padding-top: 10px;
+}

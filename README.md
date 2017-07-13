@@ -12,7 +12,7 @@ The basic function of this web application is to provide a platform for communit
 
 This project is a [Django](https://www.djangoproject.com) application written in **Python 3** using a _PostgreSQL_ database.<br>
 
-### Installation Instructions
+## Installation Instructions
 Basic Prerequisites:<br>
 
 * Python 3.4.x
@@ -21,25 +21,37 @@ Basic Prerequisites:<br>
 
 There are many different ways to set up a virtual environment, so feel free to use a method that works for you. However please make sure that you are running *Python 3.4+* within the activated environment if you have multiple versions of Python on your machine.
 
-#### Local Settings
+### Local Settings
 Find the `/civicart/sample_local_settings.py` file and rename to `local_settings.py`. This configures a SQLite server and a debug environment for local development.
 
-#### Install dependencies
+### Install dependencies
 `pip install -r requirements.txt`
 
-#### Run migrations
+### Run migrations
 `python manage.py migrate`
 
-#### Create an initial admin account
+### Create an initial admin account
 `python manage.py createsuperuser`
 
-#### Run the server locally
+### Run the server locally
 `python manage.py runserver`
 
-### Development Server
+## Front End Development
+This project uses Webpack 2 to compile JS and SCSS files.
+
+### Install NPM dependencies
+`npm install`
+
+### Build JS/SCSS files
+`npm run build`
+
+### Watch JS/SCSS files
+`npm run watch`
+
+## Development Server
 The dev server is currently hosted as a [Heroku](https://www.heroku.com/) app for ease of deployment.
 
-#### Deployment Instructions
+### Deployment Instructions
 Make sure to set environment variables for `SECRET_KEY` (random 30 character string), and `GOOGLE_MAPS_API_KEY`.
 
 1. `heroku login`
