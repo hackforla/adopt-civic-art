@@ -4,7 +4,7 @@ from .models import Artwork, ArtworkImage, Adoption
 
 class ArtworkImageInline(admin.StackedInline):
   model = ArtworkImage
-  fields = ['image', 'author', 'url', 'license', 'caption']
+  fields = ['image', 'url', 'license', 'caption']
 
 class ArtworkAdmin(admin.ModelAdmin):
   list_display = ('title', 'artist_name')
