@@ -75,6 +75,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+# this ensures we can see logs in heroku dev server
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -122,6 +123,7 @@ try:
 except ImportError:
     pass
 
+# on server, we will be using S3 to store image uploads
 if not DEBUG:
     AWS_QUERYSTRING_AUTH = False
     AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
