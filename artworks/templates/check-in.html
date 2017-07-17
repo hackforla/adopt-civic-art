@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Check In to {{ artwork.title }}{% endblock title %}
+
+{% block content %}
+  <div class="content">
+
+    <h2>Check-in</h2>
+
+    <form method="POST" class="post-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <button type="submit">Save</button>
+    </form>
+
+  </div>
+{% endblock content %}

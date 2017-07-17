@@ -5,10 +5,15 @@ from django.contrib import admin
 
 class ArtworkImage(models.Model):
     artwork = models.ForeignKey('Artwork')
-    image = models.ImageField(upload_to='artworks/', blank=True, help_text='Image file upload size limit is 2.5MB.')
+    image = models.ImageField(
+        upload_to='artworks/',
+        blank=True,
+        help_text='Image file upload size limit is 2.5MB.'
+    )
     url = models.CharField(max_length=200, blank=False)
     license = models.CharField(max_length=200, blank=True)
     caption = models.CharField(max_length=200, blank=True)
+
 
 class Artwork(models.Model):
     title = models.CharField(max_length=200, blank=False)
@@ -31,19 +36,23 @@ class Artwork(models.Model):
     def __str__(self):
         return self.title
 
+
 class Adoption(models.Model):
     user = models.ForeignKey(User)
     artwork = models.ForeignKey('Artwork')
     timestamp = models.DateField(auto_now_add=True)
 
+
 class CheckinImage(models.Model):
     checkin = models.ForeignKey('Checkin')
     image = models.ImageField(upload_to='checkins/', blank=False)
 
+
 class Checkin(models.Model):
     user = models.ForeignKey(User)
     artwork = models.ForeignKey('Artwork')
-    condition = models.CharField(max_length=200, blank=False, choices= [
+    condition = models.CharField(
+        max_length=200, blank=False, choices=[
             ('C', 'Chipping or cracking'),
             ('D', 'Dirt, dust, bird droppings, or spiderwebs'),
             ('G', 'Graffiti or vandalism'),
