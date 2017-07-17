@@ -9,11 +9,12 @@
     top: 80px;
     left: 10px;
     bottom: 10px;
+    padding-bottom: 490px;
     overflow-y: scroll;
 
     li {
-      box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.25);
-      border-radius: 3px;
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.25);
+      border-radius: 5px;
       background: #fff;
       width: 260px;
       margin: 0 0 15px 0;
@@ -40,6 +41,20 @@
 
       .info {
         padding: 10px;
+      }
+
+      &:hover {
+        h2 {
+          text-decoration: underline;
+        }
+      }
+
+      &.selected {
+        background: $red;
+
+        a {
+          color: #fff;
+        }
       }
     }
 

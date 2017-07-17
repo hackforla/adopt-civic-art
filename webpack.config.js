@@ -28,8 +28,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'static/css/styles.css',
-      allChunks: true
+      filename: 'static/css/styles.css'
     }),
     new UglifyJSPlugin()
   ]

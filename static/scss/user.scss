@@ -37,21 +37,20 @@ input[type='submit'] {
   font-weight: bold;
   color: #fff;
   border: none;
-  background-color: red;
+  background-color: $red;
   border-radius: 3px;
   padding: 15px;
   cursor: pointer;
 }
 input[type='submit']:hover {
-  color: red;
+  color: $red;
   background-color: #fff;
-  border: 1px solid red;
+  border: 1px solid $red;
 }
 
 .error {
-  color: red;
+  color: $red;
 }
-
 
 .adopted-artworks {
   margin: 20px 0;
