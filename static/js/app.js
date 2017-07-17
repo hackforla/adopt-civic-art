@@ -2,9 +2,11 @@ var $ = require('jQuery');
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: new google.maps.LatLng(34.0639, -118.3592),
-    zoom: 11,
-    scrollwheel: false
+    center: new google.maps.LatLng(34.0849232, -118.8557029),
+    zoom: 9,
+    scrollwheel: false,
+    mapTypeControl: false,
+    streetViewControl: false
   });
 
   $('.artworks li').each(function (index) {
