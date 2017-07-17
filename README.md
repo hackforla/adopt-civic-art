@@ -37,7 +37,7 @@ Find the `/civicart/sample_local_settings.py` file and rename to `local_settings
 `python manage.py runserver`
 
 ## Front End Development
-This project uses Webpack 2 to compile JS and SCSS files.<br>
+This project uses Webpack 3 to compile JS and SCSS files.<br>
 Only edit SCSS files in `/static/scss/` and JavaScript files in `/static/js/`.
 
 ### Install NPM dependencies

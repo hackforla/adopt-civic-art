@@ -19,6 +19,4 @@ function initMap() {
   });
 }
 
-$(function() {
-  window.initMap = initMap;
-});
+window.initMap = initMap;

@@ -13,11 +13,11 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.28.4",
-    "extract-text-webpack-plugin": "^2.1.2",
+    "extract-text-webpack-plugin": "^3.0.0",
     "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "uglifyjs-webpack-plugin": "^0.4.6",
-    "webpack": "^2.6.1"
+    "webpack": "^3.3.0"
   }
 }

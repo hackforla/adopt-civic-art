@@ -4,7 +4,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
   entry: ['./static/js/app.js', './static/scss/main.scss'],
   output: {
-    filename: 'static/dist/app.js',
+    filename: 'static/js/app.min.js',
   },
   module: {
     loaders: [
