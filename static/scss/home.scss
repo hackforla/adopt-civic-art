@@ -7,7 +7,7 @@
     position: absolute;
     z-index: 1;
     top: 80px;
-    left: 10px;
+    left: 0;
     bottom: 10px;
     padding-bottom: 490px;
     overflow-y: scroll;
@@ -78,6 +78,6 @@
     margin-left: -500px;
   }
   to {
-    margin-left: 0;
+    margin-left: 10px;
   }
 }
