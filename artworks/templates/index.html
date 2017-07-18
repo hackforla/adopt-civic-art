@@ -7,7 +7,7 @@
 
     <ul class="artworks">
     {% for artwork in artworks %}
-      <li data-artwork-id="{{ artwork.id }}">
+      <li data-artwork-id="{{ artwork.id }}" data-artwork-title="{{ artwork.title }}" data-lat="{{ artwork.lat }}" data-lon="{{ artwork.lon }}">
         <a href="/artwork/{{ artwork.id }}">
         <div class="image">
           {% if artwork.artworkimage_set.all.0.image %}
@@ -25,36 +25,11 @@
 
     <div id="map"></div>
 
-  </ul>
+  </div>
 {% endblock content %}
 
 {% block scripts %}
-  <script>
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: new google.maps.LatLng(34.0639, -118.3592),
-        zoom: 11,
-        scrollwheel: false
-      });
-
-      var marker;
-
-      {% for artwork in artworks %}
-      var marker{{ forloop.counter }} = new google.maps.Marker({
-        position: {
-          lat: {{ artwork.lat }},
-          lng: {{ artwork.lon }}
-        },
-        map: map,
-        title: '{{ artwork.title }}'
-      });
-      {% endfor %}
-
-      $('.artworks li').click(function () {
-        // google.maps.event.trigger(marker, 'click');
-      });
-    }
-  </script>
+  <script src="/static/js/app.min.js"></script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callback=initMap">
   </script>

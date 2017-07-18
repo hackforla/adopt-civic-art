@@ -60,7 +60,9 @@
           {% endif %}
         </ul>
         {% if not adopted %}
-        <a href="/artwork/{{ artwork.id }}/adopt/"><button>Adopt</button></a>
+        <a href="/artwork/{{ artwork.id }}/adopt/"><button class="adopt">Adopt</button></a>
+        {% else %}
+        <a href="/artwork/{{ artwork.id }}/check-in/"><button class="check-in">Check In</button></a>
         {% endif %}
       </aside>
 

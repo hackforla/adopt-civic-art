@@ -8,25 +8,24 @@ For civic artwork, the adoption model is different. We ABSOLUTELY do not want me
 
 The basic function of this web application is to provide a platform for community members to submit photos of County-owned civic artworks as a means of visual documentation and trigger maintenance efforts as needed.
 
----
-
 ## Technical Overview
 
-This project is a [Django](https://www.djangoproject.com) application written in **Python 3**.<br>
-For this prototyping round the database will be a local SQLite file until we change the engine to PostgreSQL to be production ready.
+This project is a [Django](https://www.djangoproject.com) application written in **Python 3** using a _PostgreSQL_ database.<br>
 
-### Basic Prerequisites
+## Installation Instructions
+Basic Prerequisites:<br>
+
 * Python 3.4.x
 * virtualenv ([virtual environment](https://docs.python.org/3/tutorial/venv.html))
 * pip
 
 There are many different ways to set up a virtual environment, so feel free to use a method that works for you. However please make sure that you are running *Python 3.4+* within the activated environment if you have multiple versions of Python on your machine.
 
-### Local settings
+### Local Settings
 Find the `/civicart/sample_local_settings.py` file and rename to `local_settings.py`. This configures a SQLite server and a debug environment for local development.
 
 ### Install dependencies
-`sudo pip3 install -r requirements.txt`
+`pip install -r requirements.txt` or `sudo pip3 install -r requirements.txt` (depending on your setup)
 
 ### Run migrations
 `python manage.py migrate`
@@ -37,7 +36,41 @@ Find the `/civicart/sample_local_settings.py` file and rename to `local_settings
 ### Run the server locally
 `python manage.py runserver`
 
----
+## Front End Development
+This project uses Webpack 3 to compile JS and SCSS files.<br>
+Only edit SCSS files in `/static/scss/` and JavaScript files in `/static/js/`.
 
-### Deployment Notes
-* Set environment variables for `SECRET_KEY` (random 30 character string), and `GOOGLE_MAPS_API_KEY`
+### Install NPM dependencies
+`npm install`
+
+### Build JS/SCSS files
+`npm run build`
+
+### Watch JS/SCSS files
+`npm run watch`
+
+## Static/Media File Management
+When developing locally, all static and media files will be local. However, production will use `WhiteNoise` for static file serving (like CSS, JS, and app images) and Amazon S3 (with `django-storages` and `boto`) to host and serve image uploaded files (through admin or user uploaded check-in images).
+
+## Development Server
+The dev server is currently hosted as a [Heroku](https://www.heroku.com/) app for ease of deployment.
+
+### Deployment Instructions
+Make sure to set environment variables for:
+
+- `SECRET_KEY` (random 30 character string)
+- `GOOGLE_MAPS_API_KEY`
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `S3_BUCKET`
+
+Steps for Heroku deployment:
+
+1. `heroku login`
+2. Commit and push all production ready changes onto local git repo
+3. `git push heroku master`
+
+To check logs:
+`heroku logs -t`
+
+
