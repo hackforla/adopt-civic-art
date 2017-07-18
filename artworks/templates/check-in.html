@@ -7,9 +7,14 @@
 
     <h2>Check-in</h2>
 
-    <form method="POST" class="post-form">
+    <form class="post-form" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ checkinForm.as_ul }}
+
+      {{ formset.management_form }}
+      {% for form in formset %}
+        {{ form }}
+      {% endfor %}
 
       <button type="submit">Save</button>
     </form>

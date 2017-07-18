@@ -6,8 +6,10 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
-from artworks.models import Artwork, Adoption
-from artworks.forms import CheckinForm
+from django.forms import modelformset_factory
+
+from artworks.models import Artwork, Adoption, Checkin, CheckinImage
+from artworks.forms import CheckinForm, CheckinImageForm
 
 
 def index(request):
@@ -82,20 +84,48 @@ def unadopt(request, id):
 def checkin(request, id):
     artwork = Artwork.objects.get(id=id)
 
+    # https://stackoverflow.com/questions/34006994/how-to-upload-multiple-images-to-a-blog-post-in-django
+
+    CheckinImageFormSet = modelformset_factory(
+        CheckinImage, form=CheckinImageForm, min_num=1, max_num=3, extra=3)
+
     if request.method == 'POST':
-        form = CheckinForm(request.POST)
-        if form.is_valid():
-            checkin = form.save(commit=False)
+        checkinForm = CheckinForm(request.POST)
+        formset = CheckinImageFormSet(
+            request.POST,
+            request.FILES,
+            queryset=CheckinImage.objects.none())
+
+        if checkinForm.is_valid() and formset.is_valid():
+            checkin = checkinForm.save(commit=False)
             checkin.user = request.user
             checkin.artwork = artwork
             checkin.save()
+
+            photos = formset.save(commit=False)
+
+            for photo in photos:
+                photo.checkin = checkin
+                photo.save()
+
             return redirect('artwork', id=artwork.id)
+        else:
+            formErrors = formset.errors
+            return render(request, 'check-in.html', {
+                'artwork': artwork,
+                'checkinForm': checkinForm,
+                'formset': formset,
+                'formErrors': formErrors
+            })
+
     else:
-        form = CheckinForm()
+        checkinForm = CheckinForm()
+        formset = CheckinImageFormSet(queryset=CheckinImage.objects.none())
 
     return render(request, 'check-in.html', {
         'artwork': artwork,
-        'form': form
+        'checkinForm': checkinForm,
+        'formset': formset
     })
 
 

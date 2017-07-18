@@ -30,7 +30,7 @@ class Artwork(models.Model):
     street_2 = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=200, blank=False)
     zipcode = models.IntegerField(blank=False)
-    date_entered = models.DateField(auto_now_add=True, null=False)
+    date_entered = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True, blank=False)
 
     def __str__(self):
@@ -40,7 +40,7 @@ class Artwork(models.Model):
 class Adoption(models.Model):
     user = models.ForeignKey(User)
     artwork = models.ForeignKey('Artwork')
-    timestamp = models.DateField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
 
 class CheckinImage(models.Model):
@@ -60,4 +60,4 @@ class Checkin(models.Model):
         ])
     damaged = models.BooleanField(blank=False)
     damaged_description = models.TextField(blank=True)
-    timestamp = models.DateField(auto_now_add=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
