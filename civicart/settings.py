@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lockdown',
     'storages',
 ]
 
@@ -27,6 +28,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'lockdown.middleware.LockdownMiddleware',
 ]
 
 ROOT_URLCONF = 'civicart.urls'
@@ -118,6 +120,9 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 
+# password protect site
+LOCKDOWN_PASSWORDS = (os.environ['LOCKDOWN_PASSWORD'])
+
 try:
     from .local_settings import *
 except ImportError:
@@ -131,4 +136,3 @@ if not DEBUG:
     AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET']
     MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-
