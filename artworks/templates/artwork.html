@@ -10,32 +10,32 @@
     {% endif %}
     </div>
 
-    <div class="artwork-content">
-      <article>
+    <section>
+      <div class="artwork-content">
         <h2>{{ artwork.title }}</h2>
-        <p class="artist">{{ artwork.artist_name }}</p>
+        <div class="artist">{{ artwork.artist_name }}</div>
         <br>
         <p>{{ artwork.description }}</p>
-
-        <h3>Artwork details</h3>
-        <ul>
-          <li>
-            <h4>Artwork Type</h4>
-            {{ artwork.artwork_type }}
-          </li>
-          <li>
-            <h4>Medium</h4>
-            {{ artwork.medium }}
-          </li>
-          <li>
-            <h4>Creation date</h4>
-            {{ artwork.creation_date }}
-          </li>
-        </ul>
-      </article>
+      </div>
 
       <aside>
         <ul>
+          {% if last_checkin %}
+          <li>
+            <h4>Last check-in</h4>
+            {{ last_checkin.0.timestamp|date:"F j, Y" }}
+          </li>
+          {% endif %}
+          {% if adoptees %}
+          <li class="adopted">
+            <h4>Adopted by</h4>
+            <ul>
+            {% for adoptee in adoptees %}
+              <li>{{ adoptee.user }}</li>
+            {% endfor %}
+            </ul>
+          </li>
+          {% endif %}
           <li>
             <h4>Location</h4>
             {{ artwork.location_name }}<br>
@@ -48,16 +48,6 @@
             {{ artwork.city }}<br>
             {{ artwork.zipcode }}<br>
           </li>
-          {% if adoptees %}
-          <li class="adopted">
-            <h4>Adopted by</h4>
-            <ul>
-            {% for adoptee in adoptees %}
-              <li>{{ adoptee.user }}</li>
-            {% endfor %}
-            </ul>
-          </li>
-          {% endif %}
         </ul>
         {% if not adopted %}
         <a href="/artwork/{{ artwork.id }}/adopt/"><button class="adopt">Adopt</button></a>
@@ -65,7 +55,18 @@
         <a href="/artwork/{{ artwork.id }}/check-in/"><button class="check-in">Check In</button></a>
         {% endif %}
       </aside>
+    </section>
 
+    <div class="details">
+      <section>
+        <h3>Artwork Details</h3>
+        <h4>Artwork Type</h4>
+        <p>{{ artwork.artwork_type }}</p>
+        <h4>Medium</h4>
+        <p>{{ artwork.medium }}</p>
+        <h4>Creation date</h4>
+        <p>{{ artwork.creation_date }}</p>
+      </section>
     </div>
   </div>
 {% endblock content %}

@@ -26,6 +26,9 @@ def artwork(request, id):
 
     adoptees = Adoption.objects.filter(artwork=artwork)
 
+    last_checkin = Checkin.objects.filter(artwork=artwork) \
+        .order_by('-timestamp')[:1]
+
     if request.user.is_authenticated:
         adopted = Adoption.objects.filter(user=request.user, artwork=artwork)
     else:
@@ -34,6 +37,7 @@ def artwork(request, id):
     return render(request, 'artwork.html', {
         'artwork': artwork,
         'adoptees': adoptees,
+        'last_checkin': last_checkin,
         'adopted': adopted
     })
 

@@ -3,6 +3,7 @@
 /**/
 
 .artwork {
+  padding-bottom: 80px;
 
   .artwork-image {
     width: 100%;
@@ -18,29 +19,38 @@
     position: absolute;
   }
 
-  .artwork-content {
-    width: 950px;
+  section {
+    width: 1020px;
     margin: 60px auto;
     position: relative;
   }
 
-  article {
-    width: 650px;
+  .artwork-content {
+    width: 750px;
     display: inline-block;
 
     h2 {
-      font-size: 35px;
+      font-size: 40px;
     }
+
     .artist {
-      font-size: 12px;
+      font-size: 16px;
       font-weight: bold;
+      letter-spacing: .5px;
       text-transform: uppercase;
       padding-top: 10px;
     }
+
+    p {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
     h3 {
-      margin: 60px 0 20px 0;
+      margin: 20px 0 20px 0;
       font-size: 25px;
     }
+
     ul {
       border-top: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
@@ -67,25 +77,26 @@
   }
 
   aside {
-    width: 230px;
+    width: 275px;
     background-color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1);
     border-radius: 3px;
     top: -175px;
-    right: 0;
+    right: -75px;
     position: absolute;
 
     & > ul {
-      padding: 15px 20px;
+      padding: 25px 30px;
     }
     & > ul > li {
-      padding-bottom: 20px;
+      padding-bottom: 25px;
     }
     & > ul > li h4 {
       font-size: 11px;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      padding-bottom: 3px;
+      padding-bottom: 5px;
     }
     & > ul > li:last-child {
       padding-bottom: 0;
@@ -93,24 +104,34 @@
 
     button.adopt {
       width: 100%;
-      background-color: $red;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-      font-size: 18px;
+      background: linear-gradient(0deg, $red, $red-light);
+      border-radius: 3px;
+      font-size: 20px;
       font-weight: bold;
-      padding: 15px 0;
+      letter-spacing: 1px;
+      padding: 20px 0;
+      margin-bottom: 0;
       color: #fff;
+
+      &:hover {
+        background: $red-light;
+      }
     }
 
     button.check-in {
       width: 100%;
-      background-color: $green;
-      border-bottom-right-radius: 3px;
-      border-bottom-left-radius: 3px;
-      font-size: 18px;
+      background: linear-gradient(0deg, $green, $green-light);
+      border-radius: 3px;
+      font-size: 20px;
       font-weight: bold;
-      padding: 15px 0;
+      letter-spacing: 1px;
+      padding: 20px 0;
+      margin-bottom: 0;
       color: #fff;
+
+      &:hover {
+        background: $green-light;
+      }
     }
 
     .adopted ul li {
@@ -121,6 +142,32 @@
     }
     .adopted ul li:last-child:after {
       content: '';
+    }
+  }
+
+  .details {
+    background-color: #F9F9F9;
+    padding: 30px 0;
+
+    h3 {
+      font-size: 30px;
+      border-bottom: 1px solid #BCBCBC;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    h4 {
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 10px 0 5px 0;
     }
   }
 }
