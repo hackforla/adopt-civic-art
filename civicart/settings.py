@@ -108,7 +108,7 @@ MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-GOOGLE_MAPS_API_KEY = os.environ['GOOGLE_MAPS_API_KEY']
+GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY', '')
 
 DATABASES = {
     'default': dj_database_url.config()
@@ -120,8 +120,12 @@ ALLOWED_HOSTS = ['*']
 
 DEBUG = False
 
-# password protect site
-LOCKDOWN_PASSWORDS = (os.environ['LOCKDOWN_PASSWORD'])
+# password protect site if environment variable set
+if 'LOCKDOWN_PASSWORD' in os.environ:
+    LOCKDOWN_PASSWORDS = (os.environ['LOCKDOWN_PASSWORD'])
+else:
+    LOCKDOWN_ENABLED = False
+
 
 try:
     from .local_settings import *
