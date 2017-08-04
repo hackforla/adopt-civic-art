@@ -25,7 +25,7 @@ There are many different ways to set up a virtual environment, so feel free to u
 Find the `/civicart/sample_local_settings.py` file and rename to `local_settings.py`. This configures a SQLite server and a debug environment for local development.
 
 ### Install dependencies
-`pip install -r requirements.txt` or `sudo pip3 install -r requirements.txt` (depending on your setup)
+`pip install -r requirements.txt`
 
 ### Run migrations
 `python manage.py migrate`
@@ -35,6 +35,28 @@ Find the `/civicart/sample_local_settings.py` file and rename to `local_settings
 
 ### Run the server locally
 `python manage.py runserver`
+
+## Cloud9 Installation Instructions
+
+As of August 2017, Cloud9 comes with both Python 2.7 and Python 3.4 installed in the workspace.  To install dependencies, use:
+
+`sudo pip3 install -r requirements.txt`
+
+Get a Google Maps API Key and add it to `/civicart/local_settings.py`.
+
+Run migrations with python3:
+
+`python3 manage.py migrate`
+
+Create an initial admin account:
+
+`python3 manage.py createsuperuser`
+
+Run the server locally in the Cloud9 workspace:
+
+`python3 manage.py runserver $IP:$PORT`
+
+Cloud9 will give you a link to where the application is running.
 
 ## Front End Development
 This project uses Webpack 3 to compile JS and SCSS files.<br>
