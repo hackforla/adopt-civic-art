@@ -55,6 +55,18 @@ When developing locally, all static and media files will be local. However, prod
 ## Development Server
 The dev server is currently hosted as a [Heroku](https://www.heroku.com/) app for ease of deployment.
 
+### Cloud9 Instructions
+
+As of August 2017, Cloud9 comes with both Python 2.7 and Python 3.4 installed in the workspace.  To install dependencies, use:
+
+`sudo pip3 install -r requirements.txt`
+
+Get a Google Maps API Key and add it to `/civicart/local_settings.py`.
+
+Run migrations with python3:
+
+`python3 manage.py migrate`
+
 ### Deployment Instructions
 Make sure to set environment variables for:
 
