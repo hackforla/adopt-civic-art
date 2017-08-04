@@ -82,7 +82,7 @@ Steps for Heroku deployment:
 2. Commit and push all production ready changes onto local git repo
 3. `git push heroku master`
 
-If there is a push to production that requires database changes, make sure to run migrations:
+To run database migrations on prod:<br>
 `heroku run python manage.py migrate`
 
 To check logs:
