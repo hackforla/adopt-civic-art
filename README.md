@@ -25,7 +25,7 @@ There are many different ways to set up a virtual environment, so feel free to u
 Find the `/civicart/sample_local_settings.py` file and rename to `local_settings.py`. This configures a SQLite server and a debug environment for local development.
 
 ### Install dependencies
-`pip install -r requirements.txt` or `sudo pip3 install -r requirements.txt` (depending on your setup)
+`pip install -r requirements.txt`
 
 ### Run migrations
 `python manage.py migrate`
