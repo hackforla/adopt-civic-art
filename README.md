@@ -58,7 +58,7 @@ The dev server is currently hosted as a [Heroku](https://www.heroku.com/) app fo
 ### Deployment Instructions
 Make sure to set environment variables for:
 
-- `SECRET_KEY` (random 30 character string)
+- `SECRET_KEY` (random 30-50 character string)
 - `GOOGLE_MAPS_API_KEY`
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
@@ -69,6 +69,9 @@ Steps for Heroku deployment:
 1. `heroku login`
 2. Commit and push all production ready changes onto local git repo
 3. `git push heroku master`
+
+If there is a push to production that requires database changes, make sure to run migrations:
+`heroku run python manage.py migrate`
 
 To check logs:
 `heroku logs -t`
