@@ -91,7 +91,12 @@ def checkin(request, id):
     # https://stackoverflow.com/questions/34006994/how-to-upload-multiple-images-to-a-blog-post-in-django
 
     CheckinImageFormSet = modelformset_factory(
-        CheckinImage, form=CheckinImageForm, min_num=1, max_num=3, extra=3)
+        CheckinImage,
+        form=CheckinImageForm,
+        min_num=1,
+        max_num=3,
+        extra=3
+    )
 
     if request.method == 'POST':
         checkinForm = CheckinForm(request.POST)
@@ -104,7 +109,10 @@ def checkin(request, id):
             checkin = checkinForm.save(commit=False)
             checkin.user = request.user
             checkin.artwork = artwork
+
             checkin.save()
+            # Save check in damage many to many checkboxes
+            checkinForm.save_m2m()
 
             photos = formset.save(commit=False)
 

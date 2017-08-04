@@ -30,7 +30,7 @@ class Artwork(models.Model):
     street_2 = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=200, blank=False)
     zipcode = models.IntegerField(blank=False)
-    date_entered = models.DateTimeField(auto_now_add=True)
+    date_entered = models.DateTimeField(auto_now_add=True, null=True)
     active = models.BooleanField(default=True, blank=False)
 
     def __str__(self):
@@ -42,22 +42,39 @@ class Adoption(models.Model):
     artwork = models.ForeignKey('Artwork')
     timestamp = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return 'Adoption'
+
 
 class CheckinImage(models.Model):
     checkin = models.ForeignKey('Checkin')
     image = models.ImageField(upload_to='checkins/', blank=False)
 
 
+class CheckinDamage(models.Model):
+    damage = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name = 'Check In Damage Description'
+
+    def __str__(self):
+        return self.damage
+
+
 class Checkin(models.Model):
     user = models.ForeignKey(User)
     artwork = models.ForeignKey('Artwork')
     condition = models.CharField(
-        max_length=200, blank=False, choices=[
-            ('C', 'Chipping or cracking'),
-            ('D', 'Dirt, dust, bird droppings, or spiderwebs'),
-            ('G', 'Graffiti or vandalism'),
-            ('R', 'Corrosion'),
+        max_length=100, blank=False, choices=[
+            ('G', 'Good Condition'),
+            ('D', 'Damaged'),
         ])
-    damaged = models.BooleanField(blank=False)
+    damage = models.ManyToManyField(CheckinDamage)
     damaged_description = models.TextField(blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Check In'
+
+    def __str__(self):
+        return 'Check In'

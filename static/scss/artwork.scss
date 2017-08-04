@@ -80,10 +80,11 @@
     width: 275px;
     background-color: #fff;
     font-size: 16px;
-    box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.1);
     border-radius: 3px;
     top: -175px;
     right: -75px;
+    bottom: auto;
     position: absolute;
 
     & > ul {

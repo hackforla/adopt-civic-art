@@ -1,0 +1,96 @@
+/**/
+/* Check-in page */
+/**/
+
+.check-in-artwork {
+  width: 1020px;
+  margin: 100px auto;
+  padding: 35px 100px;
+  border-radius: 7px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.1);
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .details {
+    width: 480px;
+    display: inline-block;
+
+    img {
+      height: 180px;
+      border-radius: 5px;
+    }
+
+    h3 {
+      margin-top: 15px;
+    }
+
+    .artist {
+      color: #ADADAD;
+      padding-bottom: 10px;
+    }
+  }
+
+  .report {
+    width: 480px;
+    padding-left: 20px;
+    border-left: 1px solid #EEEEEE;
+    vertical-align: top;
+    display: inline-block;
+
+    h4 {
+      font-size: 28px;
+    }
+
+    form > ul {
+      margin: 20px 0;
+
+      ul {
+        margin: 15px 0;
+      }
+
+      ul li {
+        padding: 5px 0;
+      }
+
+      #id_condition li label {
+        font-weight: bold;
+      }
+
+      #id_damage {
+        margin-top: 0;
+        margin-left: 60px;
+      }
+    }
+
+    label {
+      display: block;
+    }
+
+    textarea {
+      width: 100%;
+      border: none;
+      background: #F9F9F9;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 275px;
+      background: #FD9882;
+      border-radius: 5px;
+      margin-top: 25px;
+      padding: 15px 0;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      float: right;
+
+      &:hover {
+        background: $red;
+      }
+    }
+  }
+}
