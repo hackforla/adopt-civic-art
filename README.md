@@ -80,7 +80,7 @@ The dev server is currently hosted as a [Heroku](https://www.heroku.com/) app fo
 ### Deployment Instructions
 Make sure to set environment variables for:
 
-- `SECRET_KEY` (random 30-50 character string)
+- `DJANGO_SECRET_KEY` (random 30-50 character string)
 - `GOOGLE_MAPS_API_KEY`
 - `AWS_ACCESS_KEY_ID`
 - `AWS_SECRET_ACCESS_KEY`
