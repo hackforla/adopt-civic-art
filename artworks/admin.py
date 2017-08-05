@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib import admin
+from django.conf import settings
 from .models import Artwork, ArtworkImage, Adoption, \
     Checkin, CheckinImage, CheckinDamage
 from django.forms import CheckboxSelectMultiple
@@ -14,8 +15,8 @@ class ArtworkImageInline(admin.StackedInline):
 
     def image_preview(self, obj):
         return mark_safe(
-            """<img src="/media/%s" style="max-width: 800px" />"""
-            % obj.image)
+            """<img src="%s%s" style="max-width: 800px" />"""
+            % (settings.MEDIA_URL, obj.image))
 
 
 class ArtworkAdmin(admin.ModelAdmin):
@@ -45,8 +46,8 @@ class CheckinImageInline(admin.StackedInline):
 
     def image_preview(self, obj):
         return mark_safe(
-            """<img src="/media/%s" style="max-width: 800px" />"""
-            % obj.image)
+            """<img src="%s%s" style="max-width: 800px" />"""
+            % (settings.MEDIA_URL, obj.image))
 
 
 class CheckinAdmin(admin.ModelAdmin):
