@@ -65,7 +65,11 @@
         <h4>Medium</h4>
         <p>{{ artwork.medium }}</p>
         <h4>Creation date</h4>
+        {% if artwork.show_date_description %}
+        <p>{{ artwork.date_description }}</p>
+        {% else %}
         <p>{{ artwork.creation_date }}</p>
+        {% endif %}
       </section>
     </div>
   </div>

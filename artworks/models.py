@@ -24,8 +24,15 @@ class Artwork(models.Model):
     lat = models.FloatField(blank=False)
     lon = models.FloatField(blank=False)
     artist_name = models.CharField(max_length=200, blank=False)
-    creation_date = models.DateField(blank=False)
+    creation_date = models.IntegerField(
+        blank=False,
+        help_text='Enter a year in YYYY format, like 1978 or 2017')
     date_description = models.TextField(blank=True)
+    show_date_description = models.BooleanField(
+        default=False,
+        blank=False,
+        help_text='Checking this will show the date description \
+        instead of creation date on the artwork page')
     artwork_type = models.TextField(blank=False)
     medium = models.CharField(max_length=200, blank=False)
     location_name = models.CharField(max_length=200, blank=False)
