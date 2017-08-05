@@ -14,6 +14,9 @@ class ArtworkImage(models.Model):
     license = models.CharField(max_length=200, blank=True)
     caption = models.CharField(max_length=200, blank=True)
 
+    def __str__(self):
+        return self.artwork.title
+
 
 class Artwork(models.Model):
     title = models.CharField(max_length=200, blank=False)
@@ -43,7 +46,7 @@ class Adoption(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return 'Adoption'
+        return self.artwork.title
 
 
 class CheckinImage(models.Model):
@@ -77,4 +80,4 @@ class Checkin(models.Model):
         verbose_name = 'Check In'
 
     def __str__(self):
-        return 'Check In'
+        return self.artwork.title
