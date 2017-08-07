@@ -59,8 +59,7 @@ Run the server locally in the Cloud9 workspace:
 Cloud9 will give you a link to where the application is running.
 
 ## Front End Development
-This project uses Webpack 3 to compile JS and SCSS files.<br>
-Only edit SCSS files in `/static/scss/` and JavaScript files in `/static/js/`.
+This project uses Webpack 3 to compile JS and SCSS files.<br> Editable SCSS and JS files are in `/static/` and the compiled files are built to `/dist/`.
 
 ### Install NPM dependencies
 `npm install`

@@ -5,7 +5,7 @@ module.exports = {
   // devtool: 'inline-source-map',
   entry: ['./static/js/app.js', './static/scss/main.scss'],
   output: {
-    filename: 'static/js/app.min.js',
+    filename: 'dist/js/app.js',
   },
   module: {
     loaders: [
@@ -30,7 +30,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'static/css/styles.css'
+      filename: 'dist/css/styles.css'
     }),
     new UglifyJSPlugin({
       // sourceMap: true
