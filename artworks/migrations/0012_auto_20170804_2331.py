@@ -21,7 +21,11 @@ class Migration(migrations.Migration):
             name='show_date_description',
             field=models.BooleanField(default=False),
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
+            model_name='artwork',
+            name='creation_date'
+        )
+        migrations.AddField(
             model_name='artwork',
             name='creation_date',
             field=models.IntegerField(help_text='Enter a year in YYYY format, like "1978" or "2017"'),
