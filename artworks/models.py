@@ -18,6 +18,30 @@ class ArtworkImage(models.Model):
         return self.artwork.title
 
 
+class ArtworkType(models.Model):
+    artwork_type = models.CharField(max_length=200)
+
+    class Meta:
+        ordering = ['artwork_type']
+        verbose_name = 'Artwork Type'
+        verbose_name_plural = 'Artwork Type List'
+
+    def __str__(self):
+        return self.artwork_type
+
+
+class ArtworkMedium(models.Model):
+    medium = models.CharField(max_length=200)
+
+    class Meta:
+        ordering = ['medium']
+        verbose_name = 'Artwork Medium'
+        verbose_name_plural = 'Artwork Medium List'
+
+    def __str__(self):
+        return self.medium
+
+
 class Artwork(models.Model):
     title = models.CharField(max_length=200, blank=False)
     description = models.TextField(blank=False)
@@ -33,8 +57,8 @@ class Artwork(models.Model):
         blank=False,
         help_text='Checking this will show the date description \
         instead of creation date on the artwork page')
-    artwork_type = models.TextField(blank=False)
-    medium = models.CharField(max_length=200, blank=False)
+    artwork_type = models.ManyToManyField(ArtworkType)
+    medium = models.ManyToManyField(ArtworkMedium)
     location_name = models.CharField(max_length=200, blank=False)
     street_1 = models.CharField(max_length=200, blank=True)
     street_2 = models.CharField(max_length=200, blank=True)

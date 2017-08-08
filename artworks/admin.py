@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib import admin
 from django.conf import settings
-from .models import Artwork, ArtworkImage, Adoption, \
-    Checkin, CheckinImage, CheckinDamage
+from .models import Artwork, ArtworkImage, ArtworkType, \
+    ArtworkMedium, Adoption, Checkin, CheckinImage, CheckinDamage
 from django.forms import CheckboxSelectMultiple
 from django.utils.safestring import mark_safe
 
@@ -24,6 +24,11 @@ class ArtworkAdmin(admin.ModelAdmin):
     inlines = (ArtworkImageInline,)
 
 admin.site.register(Artwork, ArtworkAdmin)
+
+
+# Admin for artwork type and medium lists
+admin.site.register(ArtworkType)
+admin.site.register(ArtworkMedium)
 
 
 # Admin for adopted artworks
