@@ -28,6 +28,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='artwork',
             name='creation_date',
-            field=models.IntegerField(help_text='Enter a year in YYYY format, like "1978" or "2017"'),
+            field=models.IntegerField(help_text='Enter a year in YYYY format, like "1978" or "2017"', null=True),
         ),
     ]
