@@ -50,7 +50,8 @@ class Artwork(models.Model):
     artist_name = models.CharField(max_length=200, blank=False)
     creation_date = models.IntegerField(
         blank=False,
-        help_text='Enter a year in YYYY format, like 1978 or 2017')
+        help_text='Enter a year in YYYY format, like 1978 or 2017',
+        null=True)
     date_description = models.TextField(blank=True)
     show_date_description = models.BooleanField(
         default=False,
