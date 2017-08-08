@@ -30,11 +30,6 @@ class Migration(migrations.Migration):
             model_name='artwork',
             name='artwork_type',
         ),
-        migrations.AlterField(
-            model_name='artwork',
-            name='creation_date',
-            field=models.IntegerField(help_text='Enter a year in YYYY format, like 1978 or 2017'),
-        ),
         migrations.RemoveField(
             model_name='artwork',
             name='medium',
