@@ -8,6 +8,14 @@ For civic artwork, the adoption model is different. We ABSOLUTELY do not want me
 
 The basic function of this web application is to provide a platform for community members to submit photos of County-owned civic artworks as a means of visual documentation and trigger maintenance efforts as needed.
 
+## Vision Statement
+
+The County's civic artworks are cultural assets valued by the communities represented and serviced by Los Angeles County.
+
+## Mission Statement
+
+Adopt-A-Civic-Artwork inspires people to be stewards of and connect to civic artworks in their neighborhoods. 
+
 ## Technical Overview
 
 This project is a [Django](https://www.djangoproject.com) application written in **Python 3** using a _PostgreSQL_ database.<br>
