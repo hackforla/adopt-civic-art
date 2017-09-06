@@ -13,7 +13,7 @@ from artworks.forms import CheckinForm, CheckinImageForm
 
 
 def index(request):
-    artworks = Artwork.objects.order_by('-id').filter(active=True)[:5]
+    artworks = Artwork.objects.order_by('-id').filter(active=True)
 
     return render(request, 'index.html', {
         'artworks': artworks,
