@@ -11,11 +11,12 @@
     margin-top: 65px;
     position: relative;
     overflow: hidden;
-  }
-  .artwork-image img {
-    width: 100%;
-    top: -50%;
-    position: absolute;
+
+    img {
+      width: 100%;
+      top: -50%;
+      position: absolute;
+    }
   }
 
   section {
