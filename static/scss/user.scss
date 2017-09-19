@@ -10,6 +10,11 @@
 .account {
   width: 450px;
   margin: 110px auto 0 auto;
+
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    width: auto;
+    margin: 10px;
+  }
 }
 
 .account ul {

@@ -5,6 +5,10 @@
 .artwork {
   padding-bottom: 80px;
 
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    padding-bottom: 0;
+  }
+
   .artwork-image {
     width: 100%;
     height: 400px;
@@ -17,12 +21,24 @@
       top: -50%;
       position: absolute;
     }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      width: auto;
+      height: 150px;
+      margin: 10px 10px 0 10px;
+      border-radius: 3px;
+    }
   }
 
   section {
     width: 1020px;
     margin: 60px auto;
     position: relative;
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      width: auto;
+      margin: 0 10px;
+    }
   }
 
   .artwork-content {
@@ -73,6 +89,19 @@
     }
     ul li:last-child {
       border-right: none;
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      width: auto;
+      padding: 15px 0;
+
+      h2 {
+        font-size: 25px;
+      }
+
+      .artist {
+        padding-top: 5px;
+      }
     }
   }
 
@@ -143,6 +172,29 @@
     }
     .adopted ul li:last-child:after {
       content: '';
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      width: 100%;
+      top: auto;
+      right: auto;
+      font-size: 18px;
+      box-shadow: none;
+      position: relative;
+
+      & > ul {
+        padding: 0;
+      }
+      & > ul > li {
+        padding-bottom: 25px;
+      }
+      & > ul > li h4 {
+        font-size: 15px;
+      }
+
+      button {
+        margin-top: 15px;
+      }
     }
   }
 

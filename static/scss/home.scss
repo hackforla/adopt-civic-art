@@ -61,6 +61,26 @@
     &::-webkit-scrollbar {
       display: none;
     }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      top: 240px;
+      left: 10px;
+      right: 10px;
+      bottom: 0;
+      padding-bottom: 0;
+      -webkit-overflow-scrolling: touch;
+
+      li {
+        width: 100%;
+        margin: 0 0 10px 0;
+        box-shadow: none;
+        animation: none;
+
+        .image {
+          height: 150px;
+        }
+      }
+    }
   }
 
   #map {
@@ -70,6 +90,13 @@
     right: 0;
     bottom: 0;
     z-index: 0;
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      position: relative;
+      top: 0;
+      height: 150px;
+      bottom: auto;
+    }
   }
 }
 
