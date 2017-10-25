@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}List of artworks{% endblock title %}
+
+{% block content %}
+
+  <div id="artworks">
+
+    <ul>
+    {% for artwork in artworks %}
+      <li>
+        <a href="/artwork/{{ artwork.id }}">{{ artwork.title }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+
+  </div>
+
+{% endblock content %}

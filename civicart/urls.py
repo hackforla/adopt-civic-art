@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^artwork/(?P<id>[\w-]+)/adopt/$', views.adopt, name='adopt'),
     url(r'^artwork/(?P<id>[\w-]+)/unadopt/$', views.unadopt),
     url(r'^artwork/(?P<id>[\w-]+)/check-in/$', views.checkin, name='checkin'),
+    url(r'^artworks/$', views.artworks),
     url(r'^admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

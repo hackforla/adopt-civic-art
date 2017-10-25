@@ -42,6 +42,14 @@ def artwork(request, id):
     })
 
 
+def artworks(request):
+    artworks = Artwork.objects.order_by('-id').filter(active=True)
+
+    return render(request, 'artworks.html', {
+        'artworks': artworks,
+    })
+
+
 @login_required
 def profile(request):
     adoptions = Adoption.objects.filter(user=request.user)
