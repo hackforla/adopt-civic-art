@@ -1,6 +1,7 @@
 <nav role="navigation">
   <h1><a href="/">Art Watcher</a></h1>
   <ul>
+    <li><a href="{% url 'about' %}">About Adoption</a></li>
     {% if not request.user.is_authenticated %}
     <li><a href="/accounts/login">Log in</a></li>
     <li class="sign-up"><a href="/accounts/register">Sign up</a></li>
