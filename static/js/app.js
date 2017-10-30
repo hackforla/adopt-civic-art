@@ -5,7 +5,7 @@ function initMap() {
   var $artworksContainer = $('.artworks');
   var $artworks = $('.artworks li');
   var pin = '/dist/img/pin--red.svg';
-  var pinSelected = '/dist/img/pin--green.svg';
+  var pinSelected = '/dist/img/pin--blue.svg';
   var lastMarker;
 
   $artworks.each(function (index) {
