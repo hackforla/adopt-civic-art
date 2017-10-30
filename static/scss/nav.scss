@@ -25,7 +25,9 @@ nav {
 
     li {
       margin: 10px;
-      display: inline-block;
+      height: 40px;
+      padding: 10px;
+      display: table-cell;
       vertical-align: middle;
     }
 
@@ -33,20 +35,17 @@ nav {
       width: inherit;
       height: inherit;
       color: red;
+      vertical-align: middle;
       font-weight: bold;
       border: 1px solid red;
       border-radius: 3px;
-      padding: 5px 20px;
-      display: block;
+      padding: 0 20px;
+      display: table-cell;
     }
     li.sign-up a:hover {
       text-decoration: none;
       color: #fff;
       background-color: red;
-    }
-
-    li.logged-in {
-      padding-top: 10px;
     }
   }
 
