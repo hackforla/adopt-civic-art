@@ -1,10 +1,13 @@
 from django.db import models
 from django.contrib import admin
 from django.conf import settings
-from .models import Artwork, ArtworkImage, ArtworkType, \
+from .models import AboutPage, Artwork, ArtworkImage, ArtworkType, \
     ArtworkMedium, Adoption, Checkin, CheckinImage, CheckinDamage
 from django.forms import CheckboxSelectMultiple
 from django.utils.safestring import mark_safe
+
+
+admin.site.register(AboutPage)
 
 
 # Admin for artworks

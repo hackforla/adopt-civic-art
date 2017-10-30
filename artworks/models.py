@@ -3,6 +3,28 @@ from django.contrib.auth.models import User
 from django.contrib import admin
 
 
+class AboutPage(models.Model):
+    first_row_header = models.CharField(max_length=200, blank=True)
+    first_row_text = models.TextField(blank=True)
+    second_row_header = models.CharField(max_length=200, blank=True)
+    second_row_column_one_header = models.CharField(max_length=200, blank=True)
+    second_row_column_one_text = models.TextField(blank=True)
+    second_row_column_two_header = models.CharField(max_length=200, blank=True)
+    second_row_column_two_text = models.TextField(blank=True)
+    second_row_column_three_header = \
+        models.CharField(max_length=200, blank=True)
+    second_row_column_three_text = models.TextField(blank=True)
+    call_to_action_text = models.TextField(blank=True)
+    call_to_action_button = models.CharField(max_length=200, blank=True)
+    call_to_action_link = models.CharField(max_length=200, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'About Page'
+
+    def __str__(self):
+        return 'About Page'
+
+
 class ArtworkImage(models.Model):
     artwork = models.ForeignKey('Artwork')
     image = models.ImageField(

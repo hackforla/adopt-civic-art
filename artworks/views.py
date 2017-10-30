@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 from django.forms import modelformset_factory
 
-from artworks.models import Artwork, Adoption, Checkin, CheckinImage
+from artworks.models import AboutPage, Artwork, Adoption, Checkin, CheckinImage
 from artworks.forms import CheckinForm, CheckinImageForm
 
 
@@ -18,6 +18,14 @@ def index(request):
     return render(request, 'index.html', {
         'artworks': artworks,
         'GOOGLE_MAPS_API_KEY': settings.GOOGLE_MAPS_API_KEY
+    })
+
+
+def about(request):
+    about = AboutPage.objects.last()
+
+    return render(request, 'about.html', {
+        'about': about
     })
 
 

@@ -5,9 +5,38 @@
 {% block content %}
 
   <div id="about">
-    <h2>About Adoption</h2>
 
-    <h3>Los Angeles County is home to several hundred civic artworks. Discover a civic artwork in your neighborhood today.</h3>
+    <section class="first-row">
+      <h2>{{ about.first_row_header }}</h2>
+
+      <h3>{{ about.first_row_text }}</h3>
+    </section>
+
+    <section class="second-row">
+      <h2>{{ about.second_row_header }}</h2>
+
+      <ul>
+        <li>
+          <h3>{{ about.second_row_column_one_header }}</h3>
+          <h4>{{ about.second_row_column_one_text }}</h4>
+        </li>
+        <li>
+          <h3>{{ about.second_row_column_one_header }}</h3>
+          <h4>{{ about.second_row_column_one_text }}</h4>
+        </li>
+        <li>
+          <h3>{{ about.second_row_column_one_header }}</h3>
+          <h4>{{ about.second_row_column_one_text }}</h4>
+        </li>
+      </ul>
+    </section>
+
+    <section class="call-to-action">
+      <p>{{ about.call_to_action_text }}</p>
+
+      <a href="{{ about.call_to_action_link }}">{{ about.call_to_action_button }}</a>
+    </section>
+
   </div>
 
 {% endblock content %}

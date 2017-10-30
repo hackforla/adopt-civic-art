@@ -1,6 +1,6 @@
 #about {
   text-align: center;
-  padding: 130px 0 0 0;
+  padding-bottom: 50px;
 
   h2 {
     font-size: 40px;
@@ -12,5 +12,62 @@
     line-height: 2em;
     margin: auto;
     text-align: left;
+  }
+
+  .first-row {
+    color: #FFFFFF;
+    background-color: #00B275;
+    padding: 130px 0 100px 0;
+  }
+
+  .second-row {
+    padding: 100px 0;
+
+    ul {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    li {
+      width: 33%;
+      display: inline-block;
+
+      h3 {
+        width: auto;
+      }
+
+      h4 {
+        text-align: left;
+      }
+    }
+  }
+
+  .call-to-action {
+    max-width: 900px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.1);
+    margin: auto;
+    padding: 50px;
+
+    p {
+      text-align: left;
+      padding: 0 50px;
+    }
+
+    a {
+      width: 100%;
+      background: linear-gradient(0deg, $red, $red-light);
+      border-radius: 3px;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 10px 20px;
+      margin: 0 auto;
+      color: #fff;
+
+      &:hover {
+        background: $red-light;
+        text-decoration: none;
+      }
+    }
   }
 }

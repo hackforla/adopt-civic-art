@@ -8,7 +8,7 @@ from artworks import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
+    url(r'^about/$', views.about, name='about'),
     url(r'^accounts/', include('registration.backends.simple.urls')),
     url(r'^accounts/profile', views.profile),
     url(r'^artwork/(?P<id>[\w-]+)$', views.artwork, name='artwork'),
