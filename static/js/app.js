@@ -4,6 +4,9 @@ function initMap() {
   var locations = [];
   var $artworksContainer = $('.artworks');
   var $artworks = $('.artworks li');
+  var pin = '/dist/img/pin--red.svg';
+  var pinSelected = '/dist/img/pin--green.svg';
+  var lastMarker;
 
   $artworks.each(function (index) {
     locations.push($(this).data());
@@ -25,17 +28,27 @@ function initMap() {
       },
       map: map,
       title: locations[i].title,
-      id: locations[i].id
+      id: locations[i].id,
+      icon: pin
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
         $artworks.removeClass('selected');
-        $artworks.eq(i).addClass('selected');
+
+        if (lastMarker) {
+          lastMarker.setIcon(pin);
+        }
+
+        marker.setIcon(pinSelected);
+
+        lastMarker = marker;
 
         $('.artworks').animate({
           scrollTop: $artworks.eq(i).position().top + $artworksContainer.scrollTop()
-        }, 750);
+        }, 750, function () {
+          $artworks.eq(i).addClass('selected');
+        });
       }
     })(marker, i));
   }

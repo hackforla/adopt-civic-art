@@ -17,9 +17,9 @@
       border-radius: 5px;
       background: #fff;
       width: 380px;
-      margin: 0 0 15px 0;
-      margin-left: -500px;
-      animation: slideIn 2s forwards;
+      margin: 0 0 15px 15px;
+      // margin-left: -500px;
+      // animation: slideIn 2s forwards;
 
       a {
         text-decoration: none;
@@ -50,11 +50,8 @@
       }
 
       &.selected {
-        background: $red;
-
-        a {
-          color: #fff;
-        }
+        // margin-left: 50px;
+        animation: slideIn .5s forwards;
       }
     }
 
@@ -103,9 +100,9 @@
 
 @keyframes slideIn {
   from {
-    margin-left: -500px;
+    margin-left: 15px;
   }
   to {
-    margin-left: 10px;
+    margin-left: 75px;
   }
 }

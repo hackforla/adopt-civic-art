@@ -1,0 +1,31 @@
+
+<svg width="37px" height="43px" viewBox="0 0 37 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF6F4C" offset="0%"></stop>
+            <stop stop-color="#FF3100" offset="100%"></stop>
+        </linearGradient>
+        <path d="M14.373,0.42 C18.186834,0.443492152 21.8344995,1.9839289 24.5107159,4.7012341 C27.1869322,7.4185393 28.6716162,11.0892508 28.637,14.903 C28.637,18.963 26.443,23.242 20.628,29.057 L14.373,35.42 L8.01,29.056 C2.304,23.132 0.11,18.853 0.11,14.903 C0.0753837192,11.089423 1.55993081,7.41886265 4.23593108,4.70158634 C6.91193135,1.98431004 10.5593399,0.443756786 14.373,0.42 L14.373,0.42 Z" id="path-2"></path>
+        <filter x="-24.5%" y="-14.3%" width="149.1%" height="140.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.32 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.0-Discover-Artworks" transform="translate(-1139.000000, -674.000000)">
+            <g id="Pins" transform="translate(411.000000, 192.000000)">
+                <g id="Pin-Default" transform="translate(732.000000, 484.000000)">
+                    <g id="Pin">
+                        <g id="ic_pin">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                            <path stroke="#FFFFFF" stroke-width="2" d="M14.3669803,33.9996547 L19.9208932,28.3498932 C25.3709076,22.8998788 27.637,18.8058985 27.6370412,14.8939237 C27.6692456,11.3458854 26.2880023,7.93091918 23.7982429,5.40293365 C21.3084835,2.87494812 17.9149575,1.44183644 14.3668404,1.41998103 L14.3792293,1.4199806 C10.8312739,1.4420822 7.43798705,2.87530227 4.94842865,5.40326092 C2.45887026,7.93121957 1.0777543,11.3460452 1.11,14.903 C1.11,18.6786334 3.35955587,22.7864018 8.71716234,28.3489488 L14.3669803,33.9996547 Z"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

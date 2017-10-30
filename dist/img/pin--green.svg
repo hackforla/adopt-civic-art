@@ -1,0 +1,27 @@
+<svg width="36px" height="43px" viewBox="0 0 36 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#03EE56" stop-opacity="0.992074275" offset="0%"></stop>
+            <stop stop-color="#00B275" offset="100%"></stop>
+        </linearGradient>
+        <path d="M14.1341156,0.408648649 C17.8859634,0.432158941 21.4743435,1.97378522 24.1070634,4.69318872 C26.7397832,7.41259223 28.2003367,11.0861382 28.1662831,14.9028324 C28.1662831,18.9659676 26.0079421,23.2482718 20.2874532,29.0677622 L14.1341156,35.4356757 L7.87453327,29.0667614 C2.26127277,23.1381869 0.102931801,18.8558826 0.102931801,14.9028324 C0.0688781379,11.0863106 1.52929692,7.41291582 4.16180421,4.69354124 C6.79431151,1.97416665 10.3824388,0.432423779 14.1341156,0.408648649 L14.1341156,0.408648649 Z" id="path-2"></path>
+        <filter x="-24.9%" y="-14.3%" width="149.9%" height="140.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2.0.2-Discover-Artworks---Search---Full" transform="translate(-571.000000, -249.000000)">
+            <g id="Pins" transform="translate(473.000000, 165.000000)">
+                <g id="Pin" transform="translate(102.000000, 86.000000)">
+                    <g id="ic_pin">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
