@@ -51,6 +51,7 @@ admin.site.register(Adoption, AdoptionAdmin)
 class CheckInPhotoAdmin(admin.ModelAdmin):
     list_display = ('checkin', 'status', 'timestamp', 'image_preview')
     readonly_fields = ('checkin', 'link', 'image', 'timestamp', 'image_preview')
+    list_filter = ('status',)
 
     def link(self, obj):
         link = urlresolvers.reverse("admin:artworks_checkin_change", args=[obj.checkin.id])
