@@ -14,7 +14,7 @@ The County's civic artworks are cultural assets valued by the communities repres
 
 ## Mission Statement
 
-Adopt-A-Civic-Artwork inspires people to be stewards of and connect to civic artworks in their neighborhoods. 
+Adopt-A-Civic-Artwork inspires people to be stewards of and connect to civic artworks in their neighborhoods.
 
 ## Technical Overview
 
@@ -100,6 +100,7 @@ Steps for Heroku deployment:
 3. `git push heroku master`
 
 To run database migrations on prod:<br>
+`heroku run python manage.py makemigrations`<br>
 `heroku run python manage.py migrate`
 
 To check logs:
