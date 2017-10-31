@@ -103,6 +103,12 @@ class Adoption(models.Model):
         return self.artwork.title
 
 
+class Tip(models.Model):
+    artwork = models.ForeignKey('Artwork')
+    timestamp = models.DateTimeField(auto_now_add=True)
+    condition = models.TextField(blank=False)
+
+
 class CheckinImage(models.Model):
     checkin = models.ForeignKey('Checkin')
     image = models.ImageField(upload_to='checkins/', blank=False)

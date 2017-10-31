@@ -4,7 +4,7 @@ from django.conf import settings
 from django.core import urlresolvers
 
 from .models import AboutPage, Artwork, ArtworkImage, ArtworkType, \
-    ArtworkMedium, Adoption, Checkin, CheckinImage, CheckinDamage
+    ArtworkMedium, Adoption, Tip, Checkin, CheckinImage, CheckinDamage
 from django.forms import CheckboxSelectMultiple
 from django.utils.safestring import mark_safe
 
@@ -45,6 +45,10 @@ class AdoptionAdmin(admin.ModelAdmin):
     readonly_fields = ('artwork', 'user', 'timestamp')
 
 admin.site.register(Adoption, AdoptionAdmin)
+
+
+# Admin for Submit a tip
+admin.site.register(Tip)
 
 
 # Admin for Check In Damage Descriptions
