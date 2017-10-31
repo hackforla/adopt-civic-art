@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib import admin
 from django.conf import settings
+from django.core import urlresolvers
+
 from .models import AboutPage, Artwork, ArtworkImage, ArtworkType, \
     ArtworkMedium, Adoption, Checkin, CheckinImage, CheckinDamage
 from django.forms import CheckboxSelectMultiple
@@ -48,7 +50,14 @@ admin.site.register(Adoption, AdoptionAdmin)
 # Admin for Check In Damage Descriptions
 class CheckInPhotoAdmin(admin.ModelAdmin):
     list_display = ('checkin', 'status', 'timestamp', 'image_preview')
-    readonly_fields = ('checkin', 'image', 'timestamp', 'image_preview')
+    readonly_fields = ('checkin', 'link', 'image', 'timestamp', 'image_preview')
+
+    def link(self, obj):
+        link = urlresolvers.reverse("admin:artworks_checkin_change", args=[obj.checkin.id])
+
+        return '<a href="' + link + '">' + obj.checkin.artwork.title + ' Check In</a>'
+
+    link.allow_tags = True
 
     def image_preview(self, obj):
         return mark_safe(
