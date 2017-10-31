@@ -106,6 +106,20 @@ class Adoption(models.Model):
 class CheckinImage(models.Model):
     checkin = models.ForeignKey('Checkin')
     image = models.ImageField(upload_to='checkins/', blank=False)
+    status = models.CharField(
+        max_length=100, blank=True, choices=[
+            ('H', 'High Priority'),
+            ('L', 'Low Priority'),
+            ('A', 'Archived'),
+            ('R', 'Reviewed'),
+        ])
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'Check In Photos'
+
+    def __str__(self):
+        return 'Check In Photo'
 
 
 class CheckinDamage(models.Model):
@@ -126,7 +140,7 @@ class Checkin(models.Model):
             ('G', 'Good Condition'),
             ('D', 'Damaged'),
         ])
-    damage = models.ManyToManyField(CheckinDamage)
+    damage = models.ManyToManyField(CheckinDamage, blank=True)
     damaged_description = models.TextField(blank=True)
     timestamp = models.DateTimeField(auto_now_add=True)
 

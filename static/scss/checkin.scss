@@ -25,6 +25,7 @@
 
   .details {
     max-width: 480px;
+    margin-right: 20px;
     display: inline-block;
 
     img {
@@ -42,7 +43,7 @@
     }
 
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-      margin-bottom: 20px;
+      margin: 0 0 20px 0;
     }
   }
 
@@ -53,13 +54,17 @@
     vertical-align: top;
     display: inline-block;
 
+    h4 {
+      font-size: 28px;
+    }
+
     @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
       border-left: none;
       padding: 0;
-    }
 
-    h4 {
-      font-size: 28px;
+      h4 {
+        font-size: 23px;
+      }
     }
 
     form > ul {
@@ -97,7 +102,7 @@
 
     button {
       width: 275px;
-      background: #FD9882;
+      background: $red;
       border-radius: 5px;
       margin-top: 25px;
       padding: 15px 0;
@@ -108,7 +113,7 @@
       float: right;
 
       &:hover {
-        background: $red;
+        background: #FD9882;
       }
 
       @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

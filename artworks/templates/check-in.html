@@ -5,8 +5,6 @@
 {% block content %}
   <div class="check-in-artwork">
 
-    <h2>Check-in</h2>
-
     <div class="details">
 
       {% if artwork.artworkimage_set.all.0.image %}
@@ -29,7 +27,7 @@
 
     <div class="report">
 
-      <h4>Check-In or Report Damage</h4>
+      <h4>Check In or Report Damage</h4>
 
       <form class="post-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}

@@ -43,7 +43,7 @@
       }
 
       &:hover {
-        background-color: #3280c6;
+        background-color: $blue;
 
         a {
           color: #fff;
@@ -51,7 +51,7 @@
       }
 
       &.selected {
-        background-color: #3280c6;
+        background-color: $blue;
         animation: slideOut .5s forwards;
 
         a {

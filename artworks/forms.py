@@ -14,7 +14,7 @@ class CheckinForm(ModelForm):
     damage = forms.ModelMultipleChoiceField(
       widget=forms.CheckboxSelectMultiple,
       queryset=CheckinDamage.objects.all(),
-      required=True,
+      required=False,
       label=''
     )
     damaged_description = forms.CharField(

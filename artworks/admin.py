@@ -43,7 +43,17 @@ admin.site.register(Adoption, AdoptionAdmin)
 
 
 # Admin for Check In Damage Descriptions
-admin.site.register(CheckinDamage)
+class CheckInPhotoAdmin(admin.ModelAdmin):
+    list_display = ('checkin', 'status', 'timestamp', 'image_preview')
+    readonly_fields = ('checkin', 'image', 'timestamp', 'image_preview')
+
+    def image_preview(self, obj):
+        return mark_safe(
+            """<img src="%s%s" style="max-width: 800px" />"""
+            % (settings.MEDIA_URL, obj.image))
+
+
+admin.site.register(CheckinImage, CheckInPhotoAdmin)
 
 
 # Admin for Check-ins
