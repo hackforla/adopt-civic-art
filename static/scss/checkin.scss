@@ -3,7 +3,7 @@
 /**/
 
 .check-in-artwork {
-  width: 1020px;
+  max-width: 1020px;
   margin: 100px auto;
   padding: 35px 100px;
   border-radius: 7px;
@@ -13,8 +13,18 @@
     margin-bottom: 40px;
   }
 
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    margin: 30px 15px;
+    padding: 0;
+    box-shadow: none;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
   .details {
-    width: 480px;
+    max-width: 480px;
     display: inline-block;
 
     img {
@@ -30,14 +40,23 @@
       color: #ADADAD;
       padding-bottom: 10px;
     }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      margin-bottom: 20px;
+    }
   }
 
   .report {
-    width: 480px;
+    max-width: 480px;
     padding-left: 20px;
     border-left: 1px solid #EEEEEE;
     vertical-align: top;
     display: inline-block;
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      border-left: none;
+      padding: 0;
+    }
 
     h4 {
       font-size: 28px;
@@ -90,6 +109,10 @@
 
       &:hover {
         background: $red;
+      }
+
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        width: 100%;
       }
     }
   }

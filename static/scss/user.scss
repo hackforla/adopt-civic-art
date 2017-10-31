@@ -59,24 +59,38 @@ input[type='submit']:hover {
 
 .adopted-artworks {
   margin: 20px 0;
-}
-.adopted-artworks ul {
-  margin: 10px 0;
-}
-.adopted-artworks li {
-  width: 425px;
-  box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1);
-  margin-right: 10px;
-  display: inline-block;
-}
-.adopted-artworks li .image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-.adopted-artworks li img {
-  width: 100%;
-}
-.adopted-artworks li .info {
-  padding: 10px;
+
+  ul {
+    margin: 10px 0;
+
+    li {
+      width: 425px;
+      box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1);
+      margin-right: 10px;
+      display: inline-block;
+
+      .image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .info {
+        padding: 10px;
+      }
+    }
+  }
+
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    ul li {
+      width: 100%;
+      margin: 0 0 20px 0;
+      display: block;
+    }
+  }
 }

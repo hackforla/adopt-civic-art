@@ -9,6 +9,7 @@
     top: 80px;
     left: 0;
     bottom: 10px;
+    animation: fadeIn 2s;
     padding-bottom: 490px;
     overflow-y: scroll;
 
@@ -18,8 +19,6 @@
       background: #fff;
       width: 380px;
       margin: 0 0 15px 15px;
-      // margin-left: -500px;
-      // animation: slideIn 2s forwards;
 
       a {
         text-decoration: none;
@@ -44,14 +43,20 @@
       }
 
       &:hover {
-        h2 {
-          text-decoration: underline;
+        background-color: #3280c6;
+
+        a {
+          color: #fff;
         }
       }
 
       &.selected {
-        // margin-left: 50px;
-        animation: slideIn .5s forwards;
+        background-color: #3280c6;
+        animation: slideOut .5s forwards;
+
+        a {
+          color: #fff;
+        }
       }
     }
 
@@ -76,6 +81,10 @@
         .image {
           height: 150px;
         }
+
+        &.selected {
+          animation: none;
+        }
       }
     }
   }
@@ -98,7 +107,17 @@
   }
 }
 
-@keyframes slideIn {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideOut {
   from {
     margin-left: 15px;
   }

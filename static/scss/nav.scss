@@ -27,8 +27,17 @@ nav {
       margin: 10px;
       height: 40px;
       padding: 10px;
+      font-weight: bold;
       display: table-cell;
       vertical-align: middle;
+
+      &.logged-in {
+        font-weight: normal;
+
+        .user {
+          font-weight: bold;
+        }
+      }
     }
 
     li.sign-up a {
@@ -59,16 +68,20 @@ nav {
       width: 190px;
       padding: 5px 0 0 10px;
       display: block;
-      float: left;
     }
 
     ul {
-      width: 100px;
-      margin: 5px 10px 0 0;
+      margin: 0;
       padding-top: 0;
+      float: none;
+      text-align: left;
+      display: block;
 
       li {
+        height: auto;
+        padding: 0 10px;
         margin: 0;
+        display: inline-block;
       }
 
       li.sign-up a {
