@@ -7,6 +7,9 @@ from django.forms import CheckboxSelectMultiple
 from django.utils.safestring import mark_safe
 
 
+admin.site.site_header = 'ArtWatcher Administration'
+
+# Admin for about page fields
 admin.site.register(AboutPage)
 
 
