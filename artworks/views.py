@@ -161,6 +161,11 @@ def checkin(request, id):
 def tip(request, id):
     artwork = Artwork.objects.get(id=id)
 
+    if request.user.is_authenticated():
+        return render(request, 'artwork.html', {
+            'artwork': artwork,
+        })
+
     if request.method == 'POST':
         form = TipForm(request.POST)
 
