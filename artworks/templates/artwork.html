@@ -51,7 +51,18 @@
           </li>
         </ul>
         {% if not adopted %}
-        <a href="/artwork/{{ artwork.id }}/adopt/"><button class="adopt">Adopt</button></a>
+        <a href="/artwork/{{ artwork.id }}/adopt/">
+          <button class="adopt">Adopt Me!</button>
+        </a>
+        {% if not request.user.is_authenticated %}
+        {% if tipSubmitted %}
+          Thanks for submitting your tip.
+        {% else %}
+        <a href="/artwork/{{ artwork.id }}/tip/">
+          <button class="tip">Submit a Tip</button>
+        </a>
+        {% endif %}
+        {% endif %}
         {% else %}
         <a href="/artwork/{{ artwork.id }}/check-in/"><button class="check-in">Check In</button></a>
         {% endif %}

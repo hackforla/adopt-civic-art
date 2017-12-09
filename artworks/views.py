@@ -8,8 +8,8 @@ from django.contrib.auth.decorators import login_required
 
 from django.forms import modelformset_factory
 
-from artworks.models import AboutPage, Artwork, Adoption, Checkin, CheckinImage
-from artworks.forms import CheckinForm, CheckinImageForm
+from artworks.models import AboutPage, Artwork, Adoption, Tip, Checkin, CheckinImage
+from artworks.forms import CheckinForm, CheckinImageForm, TipForm
 
 
 def index(request):
@@ -139,6 +139,7 @@ def checkin(request, id):
             return redirect('artwork', id=artwork.id)
         else:
             formErrors = formset.errors
+
             return render(request, 'check-in.html', {
                 'artwork': artwork,
                 'checkinForm': checkinForm,
@@ -154,6 +155,29 @@ def checkin(request, id):
         'artwork': artwork,
         'checkinForm': checkinForm,
         'formset': formset
+    })
+
+
+def tip(request, id):
+    artwork = Artwork.objects.get(id=id)
+
+    if request.method == 'POST':
+        form = TipForm(request.POST)
+
+        if form.is_valid():
+            tip = Tip(artwork=artwork, condition=form.cleaned_data['condition'])
+            tip.save()
+
+            return render(request, 'artwork.html', {
+                'artwork': artwork,
+                'tipSubmitted': True
+            })
+    else:
+        form = TipForm
+
+    return render(request, 'submit-a-tip.html', {
+        'artwork': artwork,
+        'form': form
     })
 
 

@@ -47,10 +47,6 @@ class AdoptionAdmin(admin.ModelAdmin):
 admin.site.register(Adoption, AdoptionAdmin)
 
 
-# Admin for Submit a tip
-admin.site.register(Tip)
-
-
 # Admin for Check In Damage Descriptions
 class CheckInPhotoAdmin(admin.ModelAdmin):
     list_display = ('checkin', 'status', 'timestamp', 'image_preview')
@@ -97,3 +93,11 @@ class CheckinAdmin(admin.ModelAdmin):
     }
 
 admin.site.register(Checkin, CheckinAdmin)
+
+
+class TipAdmin(admin.ModelAdmin):
+    list_display = ('artwork', 'condition', 'timestamp')
+    readonly_fields = ('artwork', 'condition', 'timestamp')
+
+
+admin.site.register(Tip, TipAdmin)

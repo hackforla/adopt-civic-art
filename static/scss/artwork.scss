@@ -119,11 +119,13 @@
     top: -175px;
     right: -75px;
     bottom: auto;
+    padding: 20px;
     position: absolute;
 
     & > ul {
-      padding: 25px 30px;
+      padding: 0 0 15px 0;
     }
+
     & > ul > li {
       padding-bottom: 25px;
     }
@@ -137,6 +139,10 @@
       padding-bottom: 0;
     }
 
+    a:hover {
+      text-decoration: none;
+    }
+
     button.adopt {
       width: 100%;
       background: linear-gradient(0deg, $red, $red-light);
@@ -145,11 +151,25 @@
       font-weight: bold;
       letter-spacing: 1px;
       padding: 20px 0;
-      margin-bottom: 0;
+      margin: 0 0 10px 0;
       color: #fff;
+      display: block;
 
       &:hover {
         background: $red-light;
+      }
+    }
+
+    button.tip {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.1);
+      border-radius: 3px;
+      font-size: 17px;
+      padding: 20px 0;
+
+      &:hover {
+        text-decoration: underline;
       }
     }
 

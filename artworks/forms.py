@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from artworks.models import Checkin, CheckinImage, CheckinDamage
+from artworks.models import Tip, Checkin, CheckinImage, CheckinDamage
 
 
 class CheckinForm(ModelForm):
@@ -32,3 +32,10 @@ class CheckinImageForm(ModelForm):
     class Meta:
         model = CheckinImage
         fields = ('image', )
+
+
+class TipForm(forms.Form):
+    condition = forms.CharField(
+      widget=forms.Textarea,
+      required=True
+    )
