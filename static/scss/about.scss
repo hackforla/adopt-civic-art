@@ -83,11 +83,13 @@
     background: #fff;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.1);
     margin: auto;
-    padding: 50px;
+    padding: 60px 50px;
 
     p {
+      font-size: 27px;
+      line-height: 45px;
       text-align: left;
-      padding: 0 50px;
+      padding: 0 70px 20px 70px;
     }
 
     a {
@@ -97,7 +99,7 @@
       font-size: 16px;
       font-weight: bold;
       letter-spacing: 1px;
-      padding: 10px 20px;
+      padding: 15px 20px;
       margin: 0 auto;
       color: #fff;
 
