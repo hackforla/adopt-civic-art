@@ -37,6 +37,8 @@ function initMap() {
         if (lastMarker) {
           lastMarker.setIcon(pin);
 
+          // only animate selected artwork if it's a new click
+          // prevent re-animation if clicking on a highlighted pin
           if (lastMarker.id !== i) {
             $artworks.removeClass('selected');
 
@@ -48,6 +50,7 @@ function initMap() {
           }
         }
         else {
+          // if no artwork marker is selected yet, then animate and select first one
           $('.artworks').animate({
             scrollTop: $artworks.eq(i).position().top + $artworksContainer.scrollTop()
           }, 750, function () {
@@ -57,6 +60,7 @@ function initMap() {
 
         marker.setIcon(pinSelected);
 
+        // keep track of last selected artwork
         lastMarker = marker;
         lastMarker.id = i;
       }
