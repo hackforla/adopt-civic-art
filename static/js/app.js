@@ -20,19 +20,21 @@ function initMap() {
     streetViewControl: false
   });
 
+  var marker = [];
+
   for (var i = 0; i < locations.length; i++) {
-    var marker = new google.maps.Marker({
+    marker[i] = new google.maps.Marker({
       position: {
         lat: locations[i].lat,
         lng: locations[i].lon
       },
       map: map,
       title: locations[i].title,
-      id: locations[i].id,
+      id: i,
       icon: pin
     });
 
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    google.maps.event.addListener(marker[i], 'click', (function(marker, i) {
       return function() {
         if (lastMarker) {
           lastMarker.setIcon(pin);
@@ -58,14 +60,31 @@ function initMap() {
           });
         }
 
-        marker.setIcon(pinSelected);
+        marker[i].setIcon(pinSelected);
 
         // keep track of last selected artwork
-        lastMarker = marker;
-        lastMarker.id = i;
+        lastMarker = marker[i];
       }
     })(marker, i));
   }
+
+
+  $artworks.hover(function () {
+    $artworks.removeClass('selected');
+
+    // unset last hovered or selected marker
+    if (lastMarker) {
+      lastMarker.setIcon(pin);
+    }
+
+    // set marker to current hovered artwork
+    marker[$(this).index()].setIcon(pinSelected);
+
+    lastMarker = marker[$(this).index()];
+  }, function () {
+    // reset all selected artwork markers after unhover
+    marker[$(this).index()].setIcon(pin);
+  });
 }
 
 window.initMap = initMap;
