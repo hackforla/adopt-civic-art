@@ -34,21 +34,31 @@ function initMap() {
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
-        $artworks.removeClass('selected');
-
         if (lastMarker) {
           lastMarker.setIcon(pin);
+
+          if (lastMarker.id !== i) {
+            $artworks.removeClass('selected');
+
+            $('.artworks').animate({
+              scrollTop: $artworks.eq(i).position().top + $artworksContainer.scrollTop()
+            }, 750, function () {
+              $artworks.eq(i).addClass('selected');
+            });
+          }
+        }
+        else {
+          $('.artworks').animate({
+            scrollTop: $artworks.eq(i).position().top + $artworksContainer.scrollTop()
+          }, 750, function () {
+            $artworks.eq(i).addClass('selected');
+          });
         }
 
         marker.setIcon(pinSelected);
 
         lastMarker = marker;
-
-        $('.artworks').animate({
-          scrollTop: $artworks.eq(i).position().top + $artworksContainer.scrollTop()
-        }, 750, function () {
-          $artworks.eq(i).addClass('selected');
-        });
+        lastMarker.id = i;
       }
     })(marker, i));
   }
