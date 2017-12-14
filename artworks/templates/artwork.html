@@ -24,7 +24,8 @@
           {% if last_checkin %}
           <li>
             <h4>Last check-in</h4>
-            {{ last_checkin.0.timestamp|date:"F j, Y" }}
+            {{ last_checkin.0.timestamp|date:"F j, Y" }} by
+            {{ last_checkin.0.user }}
           </li>
           {% endif %}
           {% if adoptees %}
@@ -65,6 +66,7 @@
         {% endif %}
         {% else %}
         <a href="/artwork/{{ artwork.id }}/check-in/"><button class="check-in">Check In</button></a>
+        <a href="/artwork/{{ artwork.id }}/unadopt" class="cancel">Cancel Adoption</a>
         {% endif %}
       </aside>
     </section>

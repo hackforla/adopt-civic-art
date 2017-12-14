@@ -12,16 +12,17 @@
       <ul>
       {% for artwork in adoptions %}
         <li>
-          <a href="/artwork/{{ artwork.artwork.id }}">
-            <div class="image">
+          <div class="image">
+            <a href="/artwork/{{ artwork.artwork.id }}">
               <img src="{{ MEDIA_URL}}{{ artwork.artwork.artworkimage_set.all.0.image }}" >
-            </div>
-            <div class="info">
-              <h3>{{ artwork.artwork.title }}</h3>
-              <p>{{ artwork.artwork.artist_name }}</p>
-              (<a href="/artwork/{{ artwork.artwork.id }}/unadopt">Unadopt</a>)
-            </div>
-          </a>
+            </a>
+          </div>
+          <div class="info">
+            <h3><a href="/artwork/{{ artwork.artwork.id }}">{{ artwork.artwork.title }}</a></h3>
+            <p>{{ artwork.artwork.artist_name }}</p>
+            <a href="/artwork/{{ artwork.artwork.id }}/check-in/"><button class="check-in">Check In</button></a>
+            <a href="/artwork/{{ artwork.artwork.id }}/unadopt" class="cancel">Cancel Adoption</a>
+          </div>
         </li>
       {% endfor %}
       </ul>

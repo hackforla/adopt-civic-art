@@ -82,6 +82,38 @@ input[type='submit']:hover {
       .info {
         padding: 10px;
       }
+
+      h3 {
+        font-size: 25px;
+      }
+
+      p {
+        letter-spacing: .5px;
+        text-transform: uppercase;
+      }
+
+      button.check-in {
+        width: 100%;
+        background: linear-gradient(0deg, $green, $green-light);
+        border-radius: 3px;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding: 20px 0;
+        margin-bottom: 0;
+        color: #fff;
+
+        &:hover {
+          background: $green-light;
+        }
+      }
+
+      .cancel {
+        color: $red;
+        padding-top: 10px;
+        text-align: center;
+        display: block;
+      }
     }
   }
 
