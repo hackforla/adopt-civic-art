@@ -1,5 +1,12 @@
+{% load static %}
+
 <nav role="navigation">
-  <h1><a href="/">Art Watcher</a></h1>
+  <h1>
+    <a href="/">
+      <img src="{% static "img/artwatcher.jpg" %}" alt="Artwatcher" class="logo">
+      <span>Art Watcher</span>
+    </a>
+  </h1>
   <ul>
     <li><a href="{% url 'about' %}">About</a></li>
     {% if not request.user.is_authenticated %}

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block title %}Adopt a civic artwork today{% endblock title %}
 
 {% block content %}
@@ -31,7 +33,7 @@
 {% endblock content %}
 
 {% block scripts %}
-  <script src="/dist/js/app.js"></script>
+  <script src="{% static "js/app.js" %}"></script>
   <script async defer
   src="https://maps.googleapis.com/maps/api/js?key={{ GOOGLE_MAPS_API_KEY }}&callback=initMap">
   </script>

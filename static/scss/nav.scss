@@ -5,7 +5,7 @@
 nav {
   box-shadow: 0px -3px 10px 0px rgba(0,0,0,0.75);
   background-color: #fff;
-  height: 65px;
+  height: 60px;
   position: absolute;
   top: 0;
   right: 0;
@@ -13,8 +13,24 @@ nav {
   z-index: 1;
 
   h1 {
-    padding: 15px 0 0 15px;
+    padding: 3px 0 0 15px;
     display: inline-block;
+
+    .logo {
+      width: 50px;
+      vertical-align: top;
+    }
+
+    span {
+      color: $blue;
+      margin-top: 12px;
+      display: inline-block;
+      vertical-align: middle;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   ul {
