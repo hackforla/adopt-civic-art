@@ -19,3 +19,6 @@ media
 
 # local settings
 local_settings.py
+
+
+staticfiles
