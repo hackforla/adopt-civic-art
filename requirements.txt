@@ -4,7 +4,8 @@ django-registration==2.2
 whitenoise==3.3.0
 gunicorn==19.7.1
 dj-database-url==0.4.2
-psycopg2==2.7.1
+psycopg2==2.8.2
 django-storages==1.6.3
 boto==2.48.0
 django-lockdown==1.4.2
+django-environ==0.4.5  # https://github.com/joke2k/django-environ

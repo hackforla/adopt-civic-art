@@ -3,12 +3,11 @@ import dj_database_url
 
 from django.utils.crypto import get_random_string
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_string(50))
 
 INSTALLED_APPS = [
-    'artworks.apps.ArtworksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -17,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lockdown',
     'storages',
+    'artworks.apps.ArtworksConfig'
 ]
 
 MIDDLEWARE = [
@@ -110,33 +110,9 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY', '')
 
-DATABASES = {
-    'default': dj_database_url.config()
-    }
-
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-ALLOWED_HOSTS = ['*']
-
-DEBUG = False
-
 # password protect site if environment variable set
 if 'LOCKDOWN_PASSWORD' in os.environ:
     LOCKDOWN_PASSWORDS = (os.environ['LOCKDOWN_PASSWORD'])
 else:
     LOCKDOWN_ENABLED = False
 
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
-# on server, we will be using S3 to store image uploads
-if not DEBUG:
-    AWS_QUERYSTRING_AUTH = False
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET']
-    MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'

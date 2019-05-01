@@ -1,6 +1,8 @@
-import os
+from .base import *  # noqa
 
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
@@ -11,4 +13,3 @@ DATABASES = {
 
 GOOGLE_MAPS_API_KEY = ''
 
-DEBUG = True
