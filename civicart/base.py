@@ -16,7 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lockdown',
     'storages',
-    'artworks',
+    'artworks.apps.ArtworksConfig'
 ]
 
 MIDDLEWARE = [
