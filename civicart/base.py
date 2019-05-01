@@ -8,7 +8,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_string(50))
 
 INSTALLED_APPS = [
-    'artworks.apps.ArtworksConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -17,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lockdown',
     'storages',
+    'artworks',
 ]
 
 MIDDLEWARE = [
