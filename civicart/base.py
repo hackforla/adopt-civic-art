@@ -1,11 +1,8 @@
 import os
 import dj_database_url
 
-
-
 from django.utils.crypto import get_random_string
 
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_string(50))
@@ -112,11 +109,6 @@ MEDIA_URL = '/media/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 GOOGLE_MAPS_API_KEY = os.environ.get('GOOGLE_MAPS_API_KEY', '')
-
-DATABASES = {
-    'default': dj_database_url.config()
-    }
-
 
 # password protect site if environment variable set
 if 'LOCKDOWN_PASSWORD' in os.environ:
