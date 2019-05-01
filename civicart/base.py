@@ -116,5 +116,3 @@ if 'LOCKDOWN_PASSWORD' in os.environ:
 else:
     LOCKDOWN_ENABLED = False
 
-
-

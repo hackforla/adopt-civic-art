@@ -5,7 +5,7 @@ from .base import *  # noqa
 import environ
 env = environ.Env()
 
-DEBUG = False
+DEBUG = True
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
